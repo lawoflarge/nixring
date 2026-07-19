@@ -27,7 +27,7 @@
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.messagefilter</string>
+		<string>com.apple.identitylookup.message-filter</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).MessageFilterExtension</string>
 	</dict>
