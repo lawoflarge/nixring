@@ -62,4 +62,31 @@ public final class AppGroupStore {
         save(d)
         return d
     }
+
+    // MARK: - Counters (separate file, extension-owned)
+
+    private var countersURL: URL? { fileURL?.deletingLastPathComponent().appendingPathComponent("nixring-counters.json") }
+
+    public func loadCounters() -> NixringCounters {
+        guard let url = countersURL, let data = try? Data(contentsOf: url) else { return .zero }
+        return (try? Self.makeDecoder().decode(NixringCounters.self, from: data)) ?? .zero
+    }
+
+    @discardableResult
+    public func saveCounters(_ value: NixringCounters) -> Bool {
+        guard let url = countersURL, let data = try? Self.makeEncoder().encode(value) else { return false }
+        do {
+            try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try data.write(to: url, options: .atomic)
+            return true
+        } catch { return false }
+    }
+
+    /// Record one filtered message. `now` is injectable for tests.
+    public func bumpTextsFiltered(promotion: Bool, now: Date = Date()) {
+        var c = loadCounters()
+        if promotion { c.textsPromotion += 1 } else { c.textsFiltered += 1 }
+        c.lastFiltered = now
+        saveCounters(c)
+    }
 }

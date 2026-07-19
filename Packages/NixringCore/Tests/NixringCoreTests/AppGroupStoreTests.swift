@@ -39,4 +39,30 @@ final class AppGroupStoreTests: XCTestCase {
         XCTAssertEqual(out.stats.callsBlocked, 3)
         XCTAssertEqual(store.load().stats.callsBlocked, 3)
     }
+
+    func testCountersBumpAndPersist() throws {
+        let dir = try tempDir()
+        defer { try? FileManager.default.removeItem(at: dir) }
+        let store = AppGroupStore(containerURL: dir)
+
+        XCTAssertEqual(store.loadCounters(), .zero)
+        store.bumpTextsFiltered(promotion: false, now: Date(timeIntervalSince1970: 1_000_000))
+        store.bumpTextsFiltered(promotion: false, now: Date(timeIntervalSince1970: 1_000_001))
+        store.bumpTextsFiltered(promotion: true, now: Date(timeIntervalSince1970: 1_000_002))
+        let c = store.loadCounters()
+        XCTAssertEqual(c.textsFiltered, 2)
+        XCTAssertEqual(c.textsPromotion, 1)
+        XCTAssertEqual(c.lastFiltered, Date(timeIntervalSince1970: 1_000_002))
+    }
+
+    func testCountersSeparateFromConfig() throws {
+        let dir = try tempDir()
+        defer { try? FileManager.default.removeItem(at: dir) }
+        let store = AppGroupStore(containerURL: dir)
+        // saving config must not wipe counters and vice versa
+        store.bumpTextsFiltered(promotion: false)
+        store.save(NixringData(settings: NixringSettings(isPro: true)))
+        XCTAssertEqual(store.loadCounters().textsFiltered, 1)
+        XCTAssertTrue(store.load().settings.isPro)
+    }
 }

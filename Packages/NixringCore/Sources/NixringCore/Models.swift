@@ -147,6 +147,22 @@ public struct NixringSettings: Codable, Equatable, Sendable {
     }
 }
 
+/// Extension-written counters, kept in a **separate** App Group file so the extensions
+/// never clobber the app-owned config blob. iOS gives no per-call callback for Call
+/// Directory blocks, so only text filtering can be counted for real.
+public struct NixringCounters: Codable, Equatable, Sendable {
+    public var textsFiltered: Int
+    public var textsPromotion: Int
+    public var lastFiltered: Date?
+
+    public init(textsFiltered: Int = 0, textsPromotion: Int = 0, lastFiltered: Date? = nil) {
+        self.textsFiltered = textsFiltered
+        self.textsPromotion = textsPromotion
+        self.lastFiltered = lastFiltered
+    }
+    public static let zero = NixringCounters()
+}
+
 /// The complete persisted state, stored as one JSON file in the App Group container and
 /// read by the main app and both extensions.
 public struct NixringData: Codable, Equatable, Sendable {

@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "updated": "2026-07-19",
+  "note": "Nixring starter blocklist — German service ranges + known Wangiri prefixes. Grows via updates and your own additions.",
+  "entries": [
+    {
+      "e164": "+49900100000",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100137",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100274",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100411",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100548",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100685",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100822",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900100959",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101096",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101233",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101370",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101507",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101644",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101781",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900101918",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900102055",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900102192",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900102329",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900102466",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49900102603",
+      "label": "Premium-rate spam"
+    },
+    {
+      "e164": "+49137700000",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137700211",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137700422",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137700633",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137700844",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137701055",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137701266",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137701477",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137701688",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137701899",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137702110",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137702321",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137702532",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137702743",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+49137702954",
+      "label": "Televoting spam"
+    },
+    {
+      "e164": "+491805100000",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805100173",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805100346",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805100519",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805100692",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805100865",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101038",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101211",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101384",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101557",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101730",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805101903",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805102076",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805102249",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+491805102422",
+      "label": "Shared-cost spam"
+    },
+    {
+      "e164": "+2169000000",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2169000373",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2169000746",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2239000001",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2239000374",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2239000747",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2259000002",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2259000375",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2259000748",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2349000003",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2349000376",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2349000749",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2339000004",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2339000377",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2339000750",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3719000005",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3719000378",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3719000751",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3739000006",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3739000379",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+3739000752",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2529000007",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2529000380",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+2529000753",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+8819000008",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+8819000381",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+8819000754",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+6799000009",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+6799000382",
+      "label": "Ping-call fraud"
+    },
+    {
+      "e164": "+6799000755",
+      "label": "Ping-call fraud"
+    }
+  ]
+}
