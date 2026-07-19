@@ -1,0 +1,683 @@
+{
+  "competitors": [
+    {
+      "name": "Truecaller: Premium Caller ID (iOS)",
+      "summary": "Truecaller (True Software Scandinavia AB) is the world's largest caller-ID and spam-call blocker, with 500M+ users globally and ~251K US App Store ratings at ~4.4-4.5 stars. On iOS it identifies and (since iOS 18.2's Live Caller ID Lookup API) can auto-block spam/fraud/scam calls, plus offers on-device SMS filtering. Its power comes from a massive crowdsourced phone-number database — which is also its biggest liability: non-users' numbers land in a searchable database without consent, unlisting is buried, and the app is aggressively monetized. On iPhone it is widely seen as substantially weaker than the Android version because Apple restricts third-party live call screening. The clearest wedge for a competitor is a privacy-first product that never crowdsources or sells contact data, has an easy whitelist, and is honestly priced. NOTE for our positioning: Truecaller DOES have SMS filtering on iOS (on-device category sorting), so a 'calls-only, no SMS' critique does not cleanly apply — but its SMS product is weak, region-limited, and confusing to enable, which is the real opening.",
+      "rating": "App Store (US) ~4.4 out of 5 stars from ~251K ratings (fetched directly from the listing, id448142450). A separate Oct-2025 review analysis cited 4.5 stars from 247.1K reviews. The high aggregate masks recurring complaints about pricing, false positives, and privacy.",
+      "price": "Free to download with an ad-supported free tier, but on iOS the core features (real-time caller ID, automatic spam blocking) increasingly require Premium. App Store in-app purchases (verbatim from listing): Truecaller Premium Monthly $9.99; Premium Yearly $74.99; Yearly Premium Connect $74.99; Renewable Assistant Monthly $9.99; Renewable Connect Monthly $9.99; Truecaller AI Renewable Month $9.99; Renewable Ad-Free Monthly $0.99. Family Plan (up to 4 members) ~$14.99/mo or $99.99/yr; top-tier Gold ~$249/yr. Regional pricing differs (e.g. an Indian user reported a ₹549 charge). The free iOS tier is described as heavily ad-laden ('full-screen ones after every call'); Premium's main job is removing those ads.",
+      "privacyNotes": "CORE DIFFERENTIATOR AREA — be precise. Truecaller's caller-ID power comes from a crowdsourced cloud database. Historically it was built by having users upload their entire address books; today Truecaller CLAIMS it does NOT upload the phone book for users who install via the Apple App Store or Google Play (a policy it says dates to 2012), instead crowdsourcing via user edits/tags after calls. HOWEVER: (1) the app still requests full contacts access; (2) non-users' numbers still end up in a publicly searchable database without their consent because other people's edits/uploads expose them — 'your phone number is in Truecaller's database because someone you know installed it, whether you consented or not'; (3) getting unlisted is 'a deliberately buried multi-step process,' and you CANNOT unlist a number that is marked as spam; (4) the iOS App Store privacy label states the developer collects data USED TO TRACK you across other apps/sites (Identifiers, Usage Data), and data LINKED to your identity including purchases, location, contact info, user content, search history and usage — used for third-party advertising, analytics and personalization. So while Truecaller disputes the 'uploads your whole address book' claim for store installs, it is a cloud-lookup, ad-monetized, tracking-heavy service under active regulatory scrutiny (South Africa opened an investigation in 2025; prior scrutiny in India/EU). Caller-ID lookups are cloud-based (encrypted via Apple's Live Caller ID Lookup API on iOS 18.2+); SMS filtering is on-device and stored locally.",
+      "features": [
+        "Caller ID for incoming/unknown calls, backed by a crowdsourced global database (500M+ users)",
+        "Spam / fraud / scam / robocall identification and blocking",
+        "iOS 18.2+ real-time Live Caller ID Lookup (encrypted on-device -> server -> decrypted) enabling automatic spam-call blocking, previously impossible on iPhone",
+        "Cloud-based number search / reverse lookup",
+        "On-device SMS filtering (iOS 14+), auto-sorting texts into Finance/OTP, Orders, Reminders, Coupons, Offers, and junk; filtered messages stored locally not on servers",
+        "AI Assistant / call screening (claims 90%+ accuracy at spotting spam vs genuine calls)",
+        "Family Plan sharing Premium with up to 4 members",
+        "Truecaller eSIM for travel data in ~155 countries",
+        "Apple Watch and CarPlay integration",
+        "Manual spam reporting / community tagging",
+        "NOTE: call-recording feature was discontinued on iPhone as of Sept 30, 2025"
+      ],
+      "painpoints": [
+        {
+          "complaint": "Privacy horror: crowdsourced database exposes non-users without consent and is nearly impossible to escape",
+          "evidence": "Reviewers/analysts: 'your phone number is in Truecaller's database because someone you know installed it, whether you consented or not,' and 'getting your number unlisted from Truecaller is a deliberately buried multi-step process.' You cannot unlist a number at all if it has been marked as spam. The iOS App Store privacy label shows data 'used to track you' (Identifiers, Usage Data) plus identity-linked location, contacts, purchases and search history used for advertising. South Africa's regulator opened a privacy investigation in 2025 over how it collects/processes personal data."
+        },
+        {
+          "complaint": "Expensive and aggressive paywall with surprise / unwanted charges and hard cancellation",
+          "evidence": "iOS free tier is gutted and 'buried in ads, full-screen ones after every call'; core features now need Premium ($9.99/mo, $74.99/yr, Gold ~$249/yr). Apple Community + Trustpilot users report being auto-upgraded to Gold without requesting it, charged $9.99/mo despite showing no active subscription, and double-charged (one user: 'I have made payment of 549 but I was charged twice... 549 + 549 = 1098'). Others describe it as 'a costly Premium subscription' and 'an outright waste of money, patience and data,' and say cancelling is difficult (one wrote 'five times' to cancel)."
+        },
+        {
+          "complaint": "False positives block legitimate calls with no easy whitelist relief",
+          "evidence": "Users report the app flags a kid's school, doctor's office, delivery drivers and job interviews as spam because they call from unknown numbers — 'Truecaller flagged my kid's school as spam because it calls from an unknown number. I missed a pickup change.' Compounding it, Truecaller states 'We do not whitelist or remove any spam markings on a number,' frustrating both individuals and businesses that acquire a previously-flagged number."
+        },
+        {
+          "complaint": "Much weaker on iPhone than Android / 'installed it, does nothing'",
+          "evidence": "Apple restricts third-party blockers to a static Call Directory Extension with no live call screening, so historically the iOS app could not send incoming numbers to its servers. Users: 'Truecaller on my iPhone barely works compared to my old Android. Apple won't let it actually screen calls.' Even after the iOS 18.2 API, some report it 'has done nothing to identify calls, instead asking users to report whether unidentified calls were personal or business.' Confusing multi-step extension setup (enabling Call Directory + SMS Filtering in iOS Settings) leaves users thinking it is broken."
+        },
+        {
+          "complaint": "Coverage is US/India-centric; weaker caller-ID accuracy in the EU/Germany",
+          "evidence": "The crowdsourced database is densest in India and the US; European users report poor identification with many unknown numbers still not identified. Comparisons note that on iPhone, privacy-conscious or EU users are better served by carrier-grade alternatives (e.g. Hiya) because Apple's restrictions 'hobble Truecaller' and its crowdsourced model draws more complaints."
+        },
+        {
+          "complaint": "SMS/smishing protection exists on iOS but is weak, region-limited and confusing",
+          "evidence": "Truecaller DOES offer on-device SMS filtering on iOS (iOS 14+), but it is primarily category sorting (Finance/Orders/Reminders/Coupons/Offers/junk) rather than robust scam-link/smishing defense, availability is region-limited, and users must manually enable the iOS 'Unknown & Spam' SMS Filtering extension in Settings — a step many never complete, so it appears to do nothing."
+        }
+      ]
+    },
+    {
+      "name": "Hiya: Spam Blocker & Caller ID (iOS)",
+      "summary": "Hiya (by Hiya Inc.) is a free-with-subscription iOS caller-ID and spam-call blocker, 4.5 stars across ~237K US App Store ratings. Its edge over Truecaller is privacy: on iPhone, contacts access is OPTIONAL (core spam-ID/blocking/caller-ID works without it), the App Store privacy label does NOT list Contacts as collected, and Hiya states it does not sell data. But sentiment has soured hard in 2025-2026: reviewers say it moved once-free basics (auto-blocking, text-spam blocking, person name-lookups) behind a paywall while the free app now merely labels spam and lets it keep ringing, false-positives legit medical/business calls, and breaks after updates. It is call-centric with weak SMS/smishing protection, and its smartest features (Call Screener, AI Voice/deepfake Detection, Fraud Detection) are US/Canada-only. Strong differentiator opening for an EU/DE-first, no-contact-upload, calls+SMS blocker with an easy whitelist.",
+      "price": "Free tier (incoming-call spam detection w/ daily updates, spam reporting, manual block list, unlimited free lookups for spam/scam/business numbers). Premium is USD-priced and inconsistent across sources: the iOS App Store IAP list shows Hiya Premium Monthly $3.99, Quarterly $9.99, Yearly $24.99, plus a separate \"Lookup Plan\" Monthly $2.99 — while Hiya's own blog/help advertises $2.99/month or $14.99/year after a 7-day free trial that auto-renews. Advanced anti-fraud/AI features are US/Canada only.",
+      "rating": "4.5 out of 5 on the US App Store, ~237K ratings (Hiya Inc.). Aggregators cite ~236K-500K reviews; JustUseApp assigns a 0/100 \"safety\" sentiment score based on ~236K reviews, reflecting recent negative trend.",
+      "privacyNotes": "Core differentiator vs Truecaller. On iPhone, contacts/address-book access is OPTIONAL — Hiya's own docs state spam ID, spam blocking and caller ID work WITHOUT granting contacts (contacts only enable whitelist, smart-dialer autocomplete, add-to-block). The App Store \"App Privacy\" label lists Data Linked to You = only User Content (support); Data Not Linked = Identifiers (User/Device ID), Usage Data, Diagnostics — Contacts is NOT listed as collected. Hiya states \"We do NOT sell your information to third parties\" but shares \"statistical, anonymized and aggregated\" data with partners for research/analytics, and crowdsources call metadata into a global spam database. Historical blemish: a 2019 report (TechCrunch) found robocall-blocker apps incl. Hiya sending basic device data (OS version, timezone) to third-party analytics (e.g. Google Analytics) on app open without explicit consent; Hiya later issued a fix (per its own clarification post). Net: no mandatory address-book upload and no data-sale claim — materially cleaner than Truecaller — but not zero-collection, since it still crowdsources numbers and shares aggregated data.",
+      "features": [
+        "Caller ID / spam & scam identification via crowdsourced global database",
+        "Spam/scam/robocall/telemarketer call blocking (auto-block gated to Premium)",
+        "Manual block list + spam reporting (free)",
+        "Number / reverse lookup (business & spam free; individual-person name lookups Premium-only, ~200/mo)",
+        "Call Screener for unknown callers (US/Canada only)",
+        "AI Voice & deepfake detection (US/Canada only)",
+        "Real-time in-call fraud alerts (US/Canada only)",
+        "Voicemail protection",
+        "Premium caller-ID database (~1.5M identities) + 3x/day spam updates for Premium",
+        "Optional contacts access for whitelist/autocomplete (not required for core blocking)",
+        "Requires enabling 3 iOS Call Blocking & Identification switches in Settings"
+      ],
+      "painpoints": [
+        {
+          "complaint": "Aggressive paywall — once-free basics moved behind Premium subscription",
+          "evidence": "Reviewers say Hiya 'took previously standard features and put them behind a subscription wall.' Auto/automatic call blocking is now Premium-only; the free app 'lets spammers keep ringing, rather than cut them off, as it used to do.' Blocking text/SMS spammers was removed from free mode, and individual-person name lookups are now Premium-only. (JustUseApp/AppGrooves review summaries, ResetEra thread 'now requires a Premium pass for basic features')"
+        },
+        {
+          "complaint": "Doesn't actually block spam — just labels it",
+          "evidence": "Users report the app 'regularly lets through calls that it actually identifies as spam.' One reviewer: after installing, 'immediately started getting over a dozen spam calls a day which the app did not block,' and still a dozen/day after uninstalling. Another: 'Hiya rarely flags spam now' and 'still lets scam and spam calls ring through, only notifying users that they are reported.' (JustUseApp 2026)"
+        },
+        {
+          "complaint": "False positives — real medical/business calls get blocked, weak whitelist control",
+          "evidence": "Reviewers report Hiya 'blocking medical practices and doctors' offices,' with people missing telehealth calls and test-result calls; the numbers are clearly listed on Google Business/health-department sites yet the AI flags them as spam. Users feel the AI 'doesn't work very well' at distinguishing legit callers. (JustUseApp)"
+        },
+        {
+          "complaint": "Broken / buggier after every update",
+          "evidence": "'Gotten worse with every update over the past year and is now more of a nuisance than a service.' Specific bugs: freezing, inability to paste numbers for lookup, caller ID/name identification not working, app instability and slowness. Some App Store reviewers dropped stars saying recent updates 'broke' the app. (JustUseApp/App Store reviews)"
+        },
+        {
+          "complaint": "Paid for Premium, then it stopped working",
+          "evidence": "A premium user reported that after purchasing, the app stopped identifying saved contacts by name — showing 'no name available' for recognized numbers like their daughter's and aunt's. (JustUseApp review)"
+        },
+        {
+          "complaint": "Confusing iOS extension setup — 'installed it, does nothing'",
+          "evidence": "Hiya only works after manually enabling three switches in Settings > Phone > Call Blocking & Identification. Hiya's own support docs acknowledge 'a defect in iOS' where the Call Blocking switches (or the whole 'Call Blocking & Identification' option) don't appear, so the app silently does nothing; the workaround is to wait up to 12-24 hours and reboot the phone. (Hiya Zendesk help articles)"
+        },
+        {
+          "complaint": "Inconsistent / surprise pricing and auto-renew after trial",
+          "evidence": "Advertised pricing conflicts across surfaces: Hiya's blog/help says $2.99/mo or $14.99/yr after a 7-day free trial, but the live App Store IAP list shows $3.99/mo, $9.99/quarter, $24.99/yr plus a separate $2.99/mo 'Lookup Plan.' The 7-day trial auto-subscribes users afterward. (App Store listing vs blog.hiya.com)"
+        },
+        {
+          "complaint": "US-centric app database; advanced features not available in EU/DE",
+          "evidence": "Hiya's own listing states Call Screener, AI Voice Detection and Fraud Detection are 'currently available only in the United States and Canada.' While Hiya has carrier-level Branded Calling deals in the UK and Germany (O2 Telefonica, ~90% of German market; Vodafone UK), the consumer app's smartest protection and crowdsourced accuracy remain US/CA-weighted. (Apple App Store description; BusinessWire/Yahoo Finance press)"
+        },
+        {
+          "complaint": "Call-focused with limited SMS/smishing protection",
+          "evidence": "Hiya is fundamentally a call blocker/caller-ID app; free-tier text-spam blocking was removed, and reviewers note 'the app no longer allows to block text spammers in free mode - it did before,' leaving smishing/junk-SMS largely uncovered. (AppGrooves/JustUseApp review summaries)"
+        }
+      ]
+    },
+    {
+      "name": "RoboKiller: Spam Call Blocker (iOS)",
+      "summary": "RoboKiller (iOS App ID 1022831885) is a US/Canada-only freemium spam-call and spam-text blocker, owned by Milan-based Bending Spoons since Jan 2024 (acquired via Mosaic Group from IAC). It has a high App Store score (4.5/5, ~414K ratings) but a starkly worse reputation on independent review sites (PissedConsumer 1.5/5, ~425 reviews; Trustpilot ~1.5/5) driven almost entirely by billing, refund, false-positive and reliability complaints. Core value props: block ~99% of robocalls, waste spammers' time with recorded 'Answer Bots', filter spam/smishing texts into an iOS SMS Junk folder, plus a paid Personal Data Protection add-on that scrubs your info from data-broker sites. It uses cloud-based crowdsourced lookups, not on-device. It has NO Europe/UK/Germany coverage. On privacy it publicly claims 'We never sell, share, or buy your data,' yet its App Store privacy label discloses that it collects your Contacts, phone number, email, audio and coarse location linked to your identity, and that identifiers 'may be used to track you across apps and websites owned by other companies' — a meaningful gap versus its marketing and a clear opening for a privacy-first, on-device, EU-first competitor.",
+      "price": "Free to download with in-app subscriptions (core blocking is paywalled). USD only — no EUR pricing since the service is US/Canada-only. App Store currently lists a confusing spread of IAP tiers ($5.99, $7.99, $79.99, $89.99); users report ~38 different subscription options in the store despite the website advertising only 'Free' and 'Premium'. Historically ~$4.99/mo or $39.99/yr with a 7-day free trial. The annual plan was hiked to $89.99 (effective ~July 20), described in coverage as roughly a 225% / 'more than doubled' increase; an earlier hike ran $29.99→$79.99/yr. Weekly plans (~$4.99–$5.99/week) and a 'misleading $2.50 per week' offer are also reported. Buying directly via RoboKiller's site vs Apple is recommended by users for easier cancellation.",
+      "rating": "App Store: 4.5 out of 5 stars, ~414K ratings (US). NOTE the sharp contrast with independent sites: PissedConsumer 1.5/5 (~425 reviews, ~9% would recommend), Trustpilot ~1.5/5 — where recent reviews are dominated by billing, refund and false-positive complaints.",
+      "features": [
+        "Robocall/spam-call blocking — marketed as stopping ~99% of robocalls via a crowdsourced global blocklist ('SpamDB')",
+        "'Answer Bots' — auto-answers spam calls with pre-recorded audio to waste the caller's time",
+        "SMS / junk-text filtering with smishing (phishing-link) detection; flagged texts routed to an iOS 'SMS Junk' folder via the Messages > Unknown & Spam extension",
+        "Caller ID / spam number lookup and reverse-number info",
+        "Cloud-based lookups (crowdsourced database), NOT on-device",
+        "Contact-based allow-listing — accesses your contacts so known numbers aren't blocked",
+        "Personal Data Protection (PDP) — paid add-on that submits your info to data-broker sites to request removal",
+        "Block/allow lists and spam reporting",
+        "Coverage: United States and Canada ONLY — no Europe, UK, or Germany support"
+      ],
+      "privacyNotes": "Owned by Bending Spoons (Milan, Italy) since January 2024. RoboKiller's marketing/privacy page explicitly claims 'We never sell, share, or buy your data.' It does access and upload the user's CONTACTS/address book — framed as consent-based, to whitelist known numbers so they aren't blocked (i.e. not the mass reverse-lookup/contact-harvesting model Truecaller is notorious for, but contacts are still sent to its cloud). However, the iOS App Store privacy label is materially broader than the marketing claim: it lists data LINKED to the user's identity including Contacts, phone number, email address, Audio Data, coarse location, and device/user identifiers, and states identifiers 'may be used to track you across apps and websites owned by other companies.' It also collects data 'not linked to you' including purchase history and email/text message content. The optional Personal Data Protection service deliberately shares your info with data-broker websites (to trigger removals). RoboKiller has historically appeared in press coverage questioning whether robocall-blocker apps monetize user data. Net: not a proven data-seller, and less predatory than Truecaller on contact harvesting, but the combination of contact upload + cross-company trackable identifiers + cloud-only processing directly contradicts a 'privacy-first' positioning and is the clearest differentiator opening for an on-device, EU-first, no-contact-upload alternative.",
+      "painpoints": [
+        {
+          "complaint": "Aggressive, confusing and surprise pricing — steep hikes and hard-to-parse tiers",
+          "evidence": "Annual plan hiked to $89.99 (~225% / 'more than doubled' per O'Grady's PowerPage; effective ~July 20); an earlier increase ran $29.99→$79.99/yr. An Apple Community thread notes the app lists ~38 different subscription options despite the site advertising only 'Free' and 'Premium'. A separate Apple Community complaint calls out a 'misleading $2.50 per week' price. Appfigures data shows revenue only rose ~28% YoY after doubling price — heavy churn."
+        },
+        {
+          "complaint": "Billing traps, unauthorized/recurring charges, and refund refusals; near-impossible cancellation",
+          "evidence": "PissedConsumer (1.5/5, ~425 reviews) verbatim: 'Being charged every week for a service I never signed up for' (~$48+/mo); 'I was billed never used the app' (canceled within the first hour); 'Can't unsubscribe! And still being charged!'; 'Trapped and robbed by ROBO-KILLER' ($69.99 for an unwanted upgrade). Users report refund requests 'denied as final' and being charged during the free trial."
+        },
+        {
+          "complaint": "False positives — blocks legitimate/real calls with no easy whitelist",
+          "evidence": "Review-analysis reports of RoboKiller blocking a doctor's office returning test results (went to voicemail with no notification), a daughter's high school, local police, and family members already in the user's contacts. RoboKiller is singled out as drawing the most 'blocked a legit call' complaints because it screens so aggressively."
+        },
+        {
+          "complaint": "Stops working / 'does nothing' after setup — unreliable blocking",
+          "evidence": "Reviews: a 5-year customer says 'this year it stopped working, it blocks nothing'; the app 'unhooks itself from phone blocking' and, when configured, only blocks 2–3 of 10+ daily spam calls; the app repeatedly shows 'this app has stopped working' and even 'uninstalls itself,' requiring reinstalls."
+        },
+        {
+          "complaint": "SMS/text protection lets spam through",
+          "evidence": "Despite text filtering being enabled, users report 'it hasn't blocked one text in 3 weeks' and that spam/smishing texts keep arriving."
+        },
+        {
+          "complaint": "Poor / inaccessible customer service",
+          "evidence": "Users report never reaching a human — 'mostly AI-generated or canned troubleshooting responses' — no reliable phone support for cancellations, and in one case a discontinued/invalid support phone number on the receipt."
+        },
+        {
+          "complaint": "No EU / Germany coverage — US-centric crowdsourced database",
+          "evidence": "RoboKiller's own Help Center states the service is available only in the United States and Canada; it does not support Europe, the UK, or Germany, so its crowdsourced US spam database is useless for European numbers."
+        },
+        {
+          "complaint": "Privacy claims vs. actual data collection mismatch",
+          "evidence": "Marketing says 'We never sell, share, or buy your data,' but the App Store privacy label discloses Contacts, phone, email, audio and coarse location collected and linked to identity, with identifiers that 'may be used to track you across apps and websites owned by other companies'; now owned by Bending Spoons."
+        }
+      ]
+    },
+    {
+      "name": "Nomorobo (Robocall Blocker / Nomorobo Max Spam Call Blocker) — iOS",
+      "summary": "Nomorobo (by Telephone Science Corp / Telephone Science Corporation, Mt Sinai NY) is a US-focused spam-call, robocall and spam-text blocker for iOS. It is free to download with paid subscriptions. Its headline differentiator vs Truecaller is genuinely strong: it does NOT require contacts access and states it never uploads your address book or sees your call logs (contact matching is processed locally). But the current user reality is rough: the App Store rating (~4.5/5, ~22K ratings) is starkly contradicted by Trustpilot (1.6/5, 238 reviews) and JustUseApp NLP sentiment (53% negative on Basic, ~100% negative on Max). Dominant complaints today: effectiveness collapses after the free trial converts to a paid charge, hard-to-cancel annual subscriptions and refused refunds, legit calls silenced with weak whitelisting, an intrusive Max call-screening flow that plays a Nomorobo ad to callers and masks caller identity as 'screened caller', SMS/text filtering that many say simply never blocks anything, unresponsive support, and confusing setup where the Max screener 'works once then stops'. Coverage is US-only (Max must be deactivated abroad), making EU/DE fit poor. A telling recent shift: the long-standing FREE landline blocking was moved behind a paywall in January 2026, angering long-time users.",
+      "price": "Free to download with in-app subscriptions (USD; no EUR pricing — US store). App Store IAP tiers shown range Monthly $2.99–$5.99, Annual $14.99–$39.99, plus a separate 'Privacy Protection' / data-broker-removal IAP $4.99–$49.99. Nomorobo.com pricing: Nomorobo Basic $2.99/mo or $19.99/yr (per device); Nomorobo Max ~$49.99–$59.99/yr (sources vary; another lists $4.17/mo billed annually); Nomorobo Family ~$79.99/yr covering up to 4 devices. All mobile plans start with a free trial (one source: 14-day, requires card up front). Landline blocking was free for years but moved behind a paid subscription in January 2026.",
+      "rating": "App Store (US): 4.5/5 stars, ~22,000 ratings for 'Nomorobo - Robocall Blocker' (id 1134727588); the separate 'Nomorobo Max Spam Call Blocker' (id 1581617568) shows ~4.5–4.6/5. These are contradicted by off-store sources: Trustpilot 1.6/5 ('Bad') from 238 reviews; JustUseApp NLP analysis of 20,538 reviews finds 53.2% negative for Basic, and of 4,375 reviews ~100% negative for Max.",
+      "features": [
+        "Robocall/spam call blocking via Apple CallKit Call Blocking & Identification extension (on-device blocklist synced from Nomorobo's cloud database of 11M+ robocallers, +1,500/day)",
+        "Caller ID / robocall identification and a searchable database of robocall audio messages",
+        "Spam text / junk-text (SMS) filtering with SMS filter extension",
+        "'Neighbor spoofing' detection (blocks calls spoofed to look like your own number/area)",
+        "Number lookup",
+        "Nomorobo Max adds live call screening (unknown callers are asked their name and reason before ringing you) via call forwarding/simultaneous-ring",
+        "Nomorobo Max adds live voicemail transcription and personalized allow/block lists",
+        "Whitelist/allow-list to let known numbers through",
+        "Separate 'Privacy Protection' upsell = data-broker opt-out/removal service",
+        "Landline support via carrier Simultaneous Ring (VoIP/landline), now paid",
+        "Light/dark mode"
+      ],
+      "privacyNotes": "See privacyNotes above (contacts NOT uploaded — strong vs Truecaller; but tracks via identifiers and runs Amplitude/Mixpanel/GA; Max screener plays a Nomorobo ad to callers and masks identity).",
+      "painpoints": [
+        {
+          "complaint": "Effectiveness collapses right after the free trial converts to a paid charge — spam keeps coming once they have your money.",
+          "evidence": "App Store review (Acarncross): 'Blocked calls were doing ok during the trial... As soon as you charged me for a years subscription, the calls stopped being marked as spam, and still no texts are blocked... My spam calls have INCREASED since you charged me. I want my money back.' Another (Dezzie11): out of 24 scam calls received in a week 'only 2 were actually labeled robocaller'. Bogleheads user: after signup got four junk calls in two days and 'only one single ring that might be Nomorobo working... the same well-known identifiable callers we got before.'"
+        },
+        {
+          "complaint": "Aggressive annual billing that is very hard to cancel, and refused/blocked refunds — reads as a subscription trap.",
+          "evidence": "Trustpilot review titled 'DON'T PAY YEARLY!! YOU CAN'T STOP IT!!': 'I mistakenly paid for a years service... I want to stop this service. Impossible... I can't find a way to stop it.' App Store (Cateern, 'LIKE A VIRUS'): 'I paid for a year, they make it very hard for you to stop it and remove it... another month goes by and you find you still have it... I want a full refund you thieves!' JustUseApp/Trustpilot summaries note users 'charged even after requesting cancellation.'"
+        },
+        {
+          "complaint": "Legitimate calls get silenced/blocked with weak whitelisting — people miss doctors, appointment reminders, family, even lose jobs.",
+          "evidence": "App Store (Tony_the_Tiger): Nomorobo Max 'silenced my TruGreen appointments due to personal cells being used.' Trustpilot: '98 year old mother can't even ring our phone.' Search-surfaced complaints: doctor's-office and school robocall reminders users WANT are blocked; JustUseApp/store reviews note the app 'blocks calls from contact lists, causing users to lose several contacts.' Cateern reports lost jobs due to the Max screener."
+        },
+        {
+          "complaint": "Nomorobo Max call-screening is intrusive and feels deceptive: unknown callers hear a Nomorobo ad, caller identity is hidden as 'screened caller', and setup never discloses this.",
+          "evidence": "App Store (BBPopcorn, 'Deceptive advertising'): 'I got my first unknown call and discovered there's a second message... a robot voice that advertises nomorobo before asking for the caller's name... There's no indication at all during setup that there's this second message that advertises nomorobo to unknown callers... Customer support said there's no way to change that message.' Cateern: 'Every call says screened caller, you don't know who it is.'"
+        },
+        {
+          "complaint": "SMS / spam-text filtering often does nothing — many users say texts are never blocked at all (no real smishing protection).",
+          "evidence": "App Store (Acarncross): 'text messages were never blocked... still no texts are blocked.' Nomorobo Max (Cold Forge): 'Still getting spam texts and calls from the same scam artist... these premium apps don't really do much as they can't keep up with the spoofed numbers. And yes I have followed the app's install enabling call and txt block in the settings.' Cateern also reported the Max app corrupting outgoing texts into group messages."
+        },
+        {
+          "complaint": "Customer support is effectively non-existent — canned 'check the FAQ' replies or no reply at all.",
+          "evidence": "App Store (Greeneyeddi, 'Zero customer support'): 'You pay for a subscription and when you have problems you email customer support only to be told to check their FAQ... Months go by, you send numerous emails to customer support, and still no reply.' Search summaries: 'customer service/troubleshooting team never replies back'; in-app there is 'no technical support.'"
+        },
+        {
+          "complaint": "Confusing/fragile setup — the Max screener 'works once then stops', and Basic relies on an iOS extension users think 'does nothing'.",
+          "evidence": "App Store (Tony_the_Tiger): 'NomoroboMax only works the first time you utilize it and then doesn't record anything anymore... my iPhone said it was sent to voicemail [but] in nomomax there's no detected phone call, no voicemail. Support just says to delete the whole app and set it up all over again.' Setup requires manually enabling the extension in iOS Settings > Phone > Call Blocking & Identification (Basic) and configuring call forwarding (Max), which many users find opaque."
+        },
+        {
+          "complaint": "US-only / poor EU-DE coverage — database and service are American robocaller-centric and Max must be turned off abroad.",
+          "evidence": "Nomorobo HelpDesk: 'Nomorobo Max is only supported within the United States. If you are traveling abroad, please be sure to deactivate Nomorobo Max' (or risk roaming charges). The blocklist is built around US robocallers; there is no evidence of meaningful Germany/EU number coverage — a structural gap for European users."
+        },
+        {
+          "complaint": "Surprise paywall on a formerly-free feature: landline blocking that was free for years became paid in January 2026, with no clear notice and a broken discount code.",
+          "evidence": "Trustpilot (Mar 15 2026, 'Free Landline blocking services that now they expect you to pay for'): 'Used this company's free service for robo calls on my landline until a week ago... found out they stopped it in January 2026 and now was basically charging for it... offered a 50% discount code which didn't work... no mention of this on the opening page... Really disappointed.'"
+        }
+      ]
+    },
+    {
+      "name": "YouMail: Block Spam on iPhone (by YouMail, Inc.)",
+      "summary": "YouMail is a long-running (App Store ID 308331524), US-focused spam-call blocker and visual-voicemail app with a very high App Store score (4.7, ~98K ratings) but notably worse standing on independent review sites (Trustpilot 2.0/13 reviews; PissedConsumer ~1.8). Architecturally it is NOT a modern on-device blocker: it TAKES OVER your voicemail by activating your US carrier's conditional call-forwarding to a YouMail \"Deposit Number,\" then screens/blocks calls in the cloud and plays an \"out of service\" tone to scrub your number from robocall lists (per Clark.com's breakdown). Blocking accuracy leans on a crowdsourced spam database and reverse-lookup caller ID that covers US/Canada numbers only, making it a poor fit for EU/Germany. On privacy it markets itself as safe, but it is not a clean-hands on-device design: the App Store privacy label discloses Contacts collection plus data \"Used to Track You\" for advertising, the free tier is ad-supported, it uploads users' address books to build its community caller-ID database (Truecaller-style crowdsourcing, though contact sync is opt-out and YouMail says numbers aren't sold to marketers and contacts aren't made public), and its own policy concedes some disclosures \"may be considered a 'sale' under the CCPA.\" Today's loudest user complaints cluster around aggressive/loud unskippable ads on the free tier, legitimate calls (even whitelisted contacts) being blocked or silently dumped to a broken voicemail greeting, weak SMS/smishing protection that contradicts its \"full SMS blocking\" marketing, surprise free-tier downgrades pushing upgrades, and billing/cancellation/refund frustration.",
+      "price": "Free tier (ad-supported): robocall blocking, visual voicemail, reverse-lookup caller ID, voicemail-to-text — but capped (50 saved messages, limited transcriptions/month, only first ~15 sec of each transcript readable). Paid personal plans (USD): YouMail Plus $7.99/mo ($5.99/mo billed annually, ~$71.99/yr) — ad-free, up to 1,000 saved messages, 50 transcriptions/mo; YouMail Essentials $14.99/mo ($11.99/mo annually, ~$144.99/yr) — adds a 2nd phone number and more protection. Business: Complete $24.99/mo, Ultimate $34.99/mo. (Legacy \"Premium\" plan retired; new users go to Plus.) Prices are USD / US-market; no EU-localized pricing surfaced.",
+      "rating": "App Store (US): 4.7 out of 5 stars from ~98,000 ratings (older sources cite 75K–90K, so the count is growing). Sharp contrast on independent sites: Trustpilot 2.0/5 (only 13 reviews), PissedConsumer ~1.8/5 (~39 reviews), JustUseApp NLP puts ~34% of ~97K combined reviews as negative — off-App-Store venues concentrate the billing, cancellation and false-positive complaints.",
+      "features": [
+        "Cloud/server-side spam-call blocking via US carrier conditional call-forwarding to a YouMail 'Deposit Number' (NOT purely on-device; it replaces your voicemail)",
+        "Plays an 'out of service' disconnect tone at known robocallers to scrub your number from calling lists",
+        "Reverse-lookup caller ID — US and Canada numbers ONLY (no EU/DE coverage)",
+        "Crowdsourced spam database built partly from users' uploaded contact books, plus AI detection",
+        "Visual voicemail + voicemail-to-text and voicemail-to-email (machine transcription on free tier, often inaccurate)",
+        "iOS SMS spam filtering via the native iOS Message Filter extension — routes unknown-sender spam to the Messages 'Unknown Senders' folder; help center admits it 'cannot fully block SMS delivery' (filter/organize, not true block)",
+        "Smishing detection/alerts on suspicious text content",
+        "Call Screening (paid) forcing unknown callers to identify themselves",
+        "Block/Allow lists, custom greetings, auto-reply SMS to missed calls",
+        "Number-spoofing alerts, Privacy Scan, and data-broker removal (higher tiers); 2nd phone line on Essentials"
+      ],
+      "privacyNotes": "CORE DIFFERENTIATOR AREA — be precise: (1) YES, YouMail uploads/collects the user's contact list. Clark.com: \"YouMail Collects Your Contact List and Personal Information ... the service collects your contact list and other personal information as part of its operation, but you can disable the contact sync.\" Uploaded address books feed its community caller-ID database — the same crowdsourced model Truecaller is criticized for, though contact sync is OPT-OUT and YouMail claims contacts are kept private, never made public/personally-identifiable, and are not visible to other users. (2) App Store privacy nutrition label discloses Contacts collection AND data 'Used to Track You' — usage data, identifiers and diagnostics linked to identity for advertising and analytics; the free tier is ad-supported with tracking. (3) YouMail states it does NOT sell your phone number/email to marketers, BUT its own California/CCPA notice concedes it \"may disclose certain information about registered YouMail users, which may be considered a 'sale' under the CCPA,\" with an opt-out — so not zero data monetization. (4) Architecturally it is cloud-based: calls are forwarded OFF the device to YouMail's servers for screening, so more call metadata leaves the phone than with an on-device call-directory blocker. NET: milder than Truecaller (no public reverse-lookup exposing your contacts) but still an uploaded-contacts + ad-tracking + cloud-processing posture — clearly beatable by a true privacy-first, on-device, no-contact-upload design.",
+      "painpoints": [
+        {
+          "complaint": "Aggressive, loud, unskippable ads on the free tier that block basic functions and drive users to uninstall",
+          "evidence": "App Store review (Law482017): 'lately I'm seeing a lot more large intrusive ads. Hinders Me from basic functionality like clearing recents you have to wait for the large ad and many don't have an X to exit.' Follow-up update: 'I UNINSTALLED, THE LAST ADD WAS HUGE, INTRUSIVE AND VERY LOUD SOUND. NO X TO STOP. UNACCEPTABLE.' Clark.com confirms the free tier is ad-subsidized."
+        },
+        {
+          "complaint": "False positives — legitimate callers, even numbers WHITELISTED in the user's own contacts, get blocked or barred from leaving voicemail",
+          "evidence": "App Store review (Candigirl1968): 'YouMail blocked my home monitoring company - whose message is automated - from leaving a message ... if it is blocking messages from members of my own home (which number was in the contacts I linked to YouMail, so no excuse) it's worthless.' Apple Community and YouMail's own help center document legit-call/voicemail blocking too."
+        },
+        {
+          "complaint": "Unknown / non-contact callers are silently sent to voicemail with no ring, so users miss important call-backs and emergencies; voicemail greeting can be broken",
+          "evidence": "App Store review (JagrPenguin68): 'callers that aren't on your contacts list ... go straight to voicemail and you never even know they've called ... if you're waiting for an important call-back or get an emergency call from some random number, you won't get it.' Reports the automated greeting read his number with 'the last 2 digits ... wrong,' and that voicemail emails kept arriving even AFTER he deleted the app."
+        },
+        {
+          "complaint": "Weak SMS / smishing protection that contradicts YouMail's own 'full SMS spam blocking' marketing",
+          "evidence": "App Store review (Brock1100): 'I am starting to get a ton of spam texts which YouMail isn't the greatest at blocking.' YouMail's marketing page claims 'Full SMS spam blocking available on iPhone,' yet its help center states 'YouMail helps filter and organize spam texts but cannot fully block SMS delivery' — it only routes texts to the iOS Unknown Senders folder via the Message Filter extension."
+        },
+        {
+          "complaint": "Surprise free-tier downgrade / paywall pressure — limits quietly cut to push upgrades",
+          "evidence": "App Store review (Brock1100): 'this app offered 100 voicemails to be saved under the free plan. They have now limited this to 50 to get you to upgrade ... this app did not even notify me of this change.' Clark.com notes the free tier caps transcriptions and shows only the first ~15 seconds of each transcript."
+        },
+        {
+          "complaint": "Users report the free version simply does not block spam calls at all",
+          "evidence": "Trustpilot (Jan 8, 2026): 'i used the free version for some months. every day i got 4 or more spam calls. none were blocked ... i switched to another call blocker (free version) and i haven't had a single spam call since. zero.'"
+        },
+        {
+          "complaint": "Billing, cancellation and refund frustration — 'free trial' that charges, refused refunds, hard-to-reach support (this is why independent-site ratings are far lower than the App Store)",
+          "evidence": "Trustpilot (Nov 24, 2025): 'They advertise a free trial but it's not. They charge you, refuse a refund ... SCAM.' Trustpilot (Nov 25, 2025): 'Upgraded and still couldn't get any phone support ... they won't reimburse your money!' Trustpilot overall 2.0/5; PissedConsumer ~1.8/5 citing 'poor customer service ... cancellations, and refunds.'"
+        },
+        {
+          "complaint": "Confusing setup that takes over the phone's voicemail via carrier call-forwarding and reroutes real calls, breaking normal call flow",
+          "evidence": "Trustpilot (Nov 25, 2025): 'It was a disaster from the start. Confusing and blocking everything which is not good when your a business!' Trustpilot (Nov 21, 2025): 'personal calls from my phone contacts rerouted to youmail rather than thru my carrier. I swipe to not accept a call and it will either keep ringing after its been swiped.' Clark.com explains setup requires dialing carrier call-forwarding codes to divert voicemail to a YouMail 'Deposit Number'; iOS text filtering must be enabled manually deep in Settings > Apps > Messages > Unknown Senders."
+        },
+        {
+          "complaint": "US-centric — poor coverage outside the US/Canada, unfit for EU/Germany",
+          "evidence": "YouMail's reverse phone lookup / caller-ID database covers US and Canada numbers only, and its blocking relies on US-carrier conditional-call-forwarding codes plus a database of US-trending spam calls; German/EU carriers (BNetzA-regulated) heavily filter caller ID over international routes, so the model does not translate to DE/EU."
+        }
+      ]
+    },
+    {
+      "name": "Whoscall: Caller ID & Block (by Gogolook Co., Ltd.)",
+      "summary": "Whoscall is a freemium caller-ID and spam-call/SMS blocker by Taiwan-based Gogolook, strongest in Asia-Pacific (Taiwan, Japan, Korea, Thailand, Malaysia, Indonesia) and comparatively weak in EU/DE. On iOS it works through Apple's CallKit \"Call Blocking & Identification\" extension matching against a downloaded OFFLINE number database, plus an optional real-time \"Live Caller ID Plus\" that needs Premium and iOS 18+. It rates 4.7/5 on the US App Store (~3,000 ratings) but recent reviews are dominated by complaints about an aggressive, ad-choked free tier, the caller-ID extension silently breaking/needing constant re-enabling (\"installed it, does nothing\"), spam still slipping through, and coverage gaps outside Asia. Privacy-wise Whoscall is genuinely lighter than Truecaller on the contacts question (its iOS caller ID is an on-device offline DB and Gogolook markets \"we never sell/share your data\" and \"data used solely on your device\"), but its App Store privacy label still discloses third-party advertising and cross-app/website tracking in the ad-supported free tier — so it is NOT a clean no-tracking product. That gap (no ads, no ad-tracking SDKs, no contact upload at all) is the natural differentiator for a privacy-first competitor.",
+      "price": "Free with in-app purchases (ad-supported). Premium Individual: $2.89/mo or $27.00/yr; Premium Duo (2 people): $4.59/mo or $44.00/yr; Premium Family (5 people): $8.69/mo or $83.00/yr. Standalone \"Ad-Free\" add-on: $0.99/mo or $18.00 lifetime. 7-day free trial then auto-bills. Prices were raised on Aug 25, 2025 from the old $1.99/mo / $19.90/yr (existing subscribers grandfathered) — a recent, publicized price hike. Currency shown is USD on the US App Store; localized (EUR etc.) via App Store regional pricing.",
+      "rating": "4.7 out of 5 on the US App Store, ~3,000 ratings (shown as \"3K\"). Note the high aggregate is inflated by prompted ratings; recent written reviews skew negative on ads and the extension not working. App is a 2026 App Store Awards Global Finalist (Cultural Impact) per the listing.",
+      "features": [
+        "Caller ID for unknown incoming calls via CallKit 'Call Blocking & Identification' extension (matches an on-device OFFLINE database you download; works without internet)",
+        "Automatic spam/scam call blocking (auto-block of known scam numbers is a Premium feature)",
+        "Auto-updated number database (Premium; free users must manually refresh the offline DB)",
+        "Live iOS Caller ID Plus — real-time cloud lookup for numbers not in the offline DB (Premium + iOS 18+ only)",
+        "Smart SMS / smishing detection and 'SMS Assistant' that categorizes texts and checks URL/text safety (largely Premium-gated; iOS SMS filtering limited by Apple's SMS Filter extension)",
+        "Manual number lookup / search a number's reputation in the app",
+        "URL, screenshot and phone-number verification / scam check",
+        "Ad-free experience (Premium, or standalone $0.99/mo add-on)",
+        "Community reporting/badges and 'Mission Board' points gamification",
+        "Global crowdsourced + AI + partner (telco/government) database of 1B+ numbers, 70M+ downloads — Asia-Pacific-centric"
+      ],
+      "privacyNotes": "See privacyNotes field.",
+      "painpoints": [
+        {
+          "complaint": "Aggressive, intrusive, and deceptive ads in the free tier are the single loudest complaint — full-screen, unskippable ads with fake/deceptive close buttons, effectively forcing a Premium or Ad-Free purchase.",
+          "evidence": "App Store review 'Ads everywhere' (Markwtfsrsly): the app is '...only full of ads. Most of them are full screen, unskippable and cannot be muted.' Review-analysis coverage adds the app is 'flooded with aggressive full-screen ads' where 'the \\\"X\\\" close button on the ad [is] completely fake and deceptive.' Whoscall monetizes this directly — a standalone Ad-Free add-on costs $0.99/mo or $18 lifetime, and ad-free is otherwise bundled into Premium."
+        },
+        {
+          "complaint": "The iOS caller-ID / blocking extension silently stops working or can't be enabled at all — the classic 'installed it, does nothing' failure. iOS auto-disables the 'Call Blocking & Identification' toggle and re-enabling errors out.",
+          "evidence": "App Store review titled 'Useless' (roxas69): the app 'continues to tell me to go to my setting and follow what it says, and when you try it says error no matter what you do.' Other reviewers say caller ID/block 'hasn't worked for quite a while even though it's enabled in phone settings.' Whoscall's own Zendesk docs concede 'the iOS system automatically disables' the extension and tell users to keep re-toggling it and refreshing; multiple Apple Community threads report 'Can't enable call blocking and identification.'"
+        },
+        {
+          "complaint": "Spam still gets through / detection is inconsistent — the app fails at its core job for some users, with 'nonexistent' support.",
+          "evidence": "App Store review 'Works most of the time' (Vaaasssssssccccoooooo, 11/2025): 'Sometimes it doesn't show the call.' Other user reports: the app 'blocked nothing and [they] got more spam and nuisance calls using the app than they did without it, and that support is nonexistent.'"
+        },
+        {
+          "complaint": "Weak coverage outside Asia-Pacific — as a Taiwan/Gogolook product it's tuned for Taiwan/Japan/Korea/Thailand/Malaysia/Indonesia; EU/DE numbers frequently come back 'unknown' or misidentified. This is the geographic gap for a European competitor.",
+          "evidence": "Wikipedia/company data: Gogolook is Taiwan-based with 'particular strength in Taiwan, Japan, South Korea, Thailand, Malaysia, and Indonesia.' Review aggregators note users 'seek alternatives to Whoscall due to its limited coverage in certain regions' and report 'occasional inaccuracies in caller identification' and 'misidentification of legitimate business calls.' An App Store review also flags dual-SIM/eSIM handling: 'doesn't detect which country the esim is using.'"
+        },
+        {
+          "complaint": "The offline database goes stale and manual updates fail — and the auto-updating database plus real-time lookup are paywalled, so free users get an out-of-date DB that literally won't refresh.",
+          "evidence": "User reports of 'always failing when updating the phone number list' and 'failing to install the Whoscall phonebook,' with numbers rejected as the 'wrong format.' Structurally, 'Auto-Updated Number Database' and 'Live iOS Caller ID Plus' (real-time lookup) are Premium-only, and Live Caller ID Plus additionally requires iOS 18+ — so the free experience depends on a manual, failure-prone offline DB refresh."
+        },
+        {
+          "complaint": "Recent price increase and trial-to-paid friction — Premium value is questioned when core features don't reliably work.",
+          "evidence": "Whoscall raised Premium on Aug 25, 2025 from $1.99/mo ($19.90/yr) to $2.89/mo ($27/yr) (existing subs grandfathered) — a change Whoscall itself blogged about ('Lock In Your Whoscall Premium Price Before It Changes'). Premium is a 7-day free trial that 'auto-bills unless canceled.' Reviewers raise 'the perceived value of premium subscriptions when certain features do not consistently perform as expected.'"
+        },
+        {
+          "complaint": "SMS / smishing protection is limited and paywalled on iOS — the 'SMS Assistant' text-safety scanning is a Premium feature, and iOS constrains SMS filtering to Apple's extension, so buyers expecting Truecaller-style text protection are underserved on the free tier.",
+          "evidence": "Whoscall's Premium page lists 'SMS Assistant — Categorizes messages and checks URL/text safety' among paywalled features; basic free use is caller-ID-centric. iOS SMS filtering is delivered via Apple's SMS Filter extension, which limits how much junk-text protection any third-party app can provide."
+        },
+        {
+          "complaint": "Free tier lost/limited the ability to report numbers, and antivirus tools have repeatedly false-flagged the app — eroding trust.",
+          "evidence": "Users report 'they can't report numbers anymore, with the latest update no longer allowing numbers to be reported.' Separately, F-Secure SAFE 'repeatedly flags the Whoscall app as \\'undesirable\\'' and then acknowledges it as a 'false positive,' a cycle that 'comes back again and again.'"
+        }
+      ]
+    },
+    {
+      "name": "Should I Answer (iOS spam-call blocker) — by Mister Group s.r.o.",
+      "summary": "Should I Answer is a caller-ID and spam-call blocker for iOS by Czech developer Mister Group s.r.o. It works off a community-rated database (marketed as ~4M spam warnings/day, ~200k blocks/day, ~30k new user reviews/day) supplemented in the US by the Do Not Call Registry and FCC data. Blocking runs through Apple's CallKit call-directory extension with the database downloaded to the device. Its standout, genuine positioning is privacy: unlike Truecaller it does NOT upload the address book, does not store the user's number, and states everything happens on-device — a real differentiator. But the product is weak in execution: it is CALLS-ONLY (no SMS/smishing filtering), users report poor detection ('one out of 20 calls'), a surprise $1.99/mo paywall behind a 'free' pitch, heavy in-app ads even for paying users, and inaccurate caller-ID data. Its US App Store rating is a poor 2.6/5 across roughly 470 ratings, reflecting broad dissatisfaction despite the privacy story.",
+      "price": "Free to download with in-app purchases. Core value (caller ID, automatic blocking of unwanted calls, daily database updates) is gated behind a subscription of USD $1.99 / month (1-month auto-renewing; price varies by country/currency). Also ad-supported (web/in-app ads plus voluntary donations) — ads appear even to paying users.",
+      "rating": "2.6 out of 5 stars, ~470 ratings (US App Store, id1199812713)",
+      "features": [
+        "Automatic call blocking of unwanted/dangerous numbers via Apple CallKit call-directory extension",
+        "Caller ID / unknown-number identification",
+        "Community-rated spam database (marketed as ~4M spam warnings and ~200k blocks per day, ~30k new user reviews/day)",
+        "US database supplemented by the Do Not Call Registry and FCC data",
+        "On-device operation — spam database is downloaded to the phone rather than queried in the cloud per call",
+        "User reporting of spam numbers with BLOCK / ALLOW ratings",
+        "Whitelist / blocking-exception (highest priority; Contacts treated as trusted and precede the community DB)",
+        "Adjustable protection levels (e.g. 'High protection' blocks on a single approved rating)",
+        "CALLS ONLY — no SMS / text / smishing filtering",
+        "Available across regions via localized sites (.com/.co.uk/.net); European (Czech) origin, though number data is community-dependent and thinner outside strong markets"
+      ],
+      "privacyNotes": "Core differentiator and genuinely strong. Should I Answer explicitly does NOT upload the user's contacts/address book and does NOT store the user's phone number — the opposite of Truecaller. From its privacy page: \"we don't even 'see' them – everything is happening in your phone, not on our servers\" and \"we don't know your number or your phone contacts.\" It states it works on an anonymous basis, collecting only a first name plus opt-in email, and anonymous incoming-call statistics not linked to any user or number. Revenue is from web/in-app advertising and voluntary donations, explicitly not from selling user data. The Apple App Store privacy label reads \"The developer does not collect any data from this app.\" Caveat: the app is heavily ad-supported, so an in-app advertising/tracking surface exists even though the address book itself is not harvested. Net: a credible, verifiable privacy posture that a competitor could position directly against contact-uploading incumbents.",
+      "painpoints": [
+        {
+          "complaint": "Poor spam detection / high false-negative rate — users still get many spam calls even while paying",
+          "evidence": "2-star review (HellerJ_56, 03/01/2019): 'At best one out of 20 calls or actually detected correctly,' with the user forced to manually add spam numbers despite subscribing. Other users report still receiving ~3 to 10+ unsolicited calls a day after paying, including from numbers they had requested be blocked."
+        },
+        {
+          "complaint": "No SMS / text / smishing protection — the app blocks calls only",
+          "evidence": "2-star review (BecksWecks, 11/23/2019): the app does not block SMS texts, 'I get 2-3 each day,' and deleting spam texts just confirms the number to spammers. This is a structural gap versus users who want combined call + text protection."
+        },
+        {
+          "complaint": "Surprise paywall behind a 'free' pitch — feels bait-and-switch",
+          "evidence": "1-star review (jetman25, 08/15/2019): 'They all tell you it's free but when you waste your time to activate they all want some fee,' referring to the ~$2/month subscription required to unlock caller ID, blocking and database updates. Users switching from Android were surprised the previously-free functionality now cost money."
+        },
+        {
+          "complaint": "Aggressive in-app ads even for paying subscribers",
+          "evidence": "3-star review (2ebtwoehaw, 01/29/2021): 'an average of 5 ads per number' when reporting spam despite paying for the app; other users complain about navigating floating and popup ads when reporting scam calls/SMS."
+        },
+        {
+          "complaint": "Inaccurate caller-ID / database data — undermines trust in the paid lookup",
+          "evidence": "2-star review (GhostriderGaleJ, 05/18/2018): testing with the reviewer's own number, the app 'had me living in the wrong state and with the wrong cellular company,' leading them to question whether the paid information is authentic. Crowdsourced data quality is uneven, especially outside the strongest markets."
+        },
+        {
+          "complaint": "Poor visibility/UX — no easy view of blocked calls, no recent-call search",
+          "evidence": "2-star review (kureks, 01/24/2019): complains there is no recent-call search and no visibility into which calls were blocked — 'The whole point of that is to be offered convenience. If it is not convenient then why even subscribe?'"
+        },
+        {
+          "complaint": "False positives with manual whitelist friction",
+          "evidence": "Per the developer's own help docs, 'High protection' blocks a number after just one admin-approved rating, so a single (possibly wrong) rating can block a legitimate caller; the fix is a manual per-number whitelist / BLOCK-ALLOW exception or adding the caller to Contacts, i.e. reactive cleanup rather than prevention."
+        },
+        {
+          "complaint": "Reduced effectiveness on iPhone vs Android (iOS CallKit constraints)",
+          "evidence": "Reviews from Android-to-iPhone switchers report the app underperforming on iOS, with '10 or more spam calls showing up daily despite paying,' reflecting the CallKit call-directory extension's limits (static on-device list, no live per-call cloud lookup)."
+        }
+      ]
+    },
+    {
+      "name": "Truecaller: Premium Caller ID & Block (iOS category leader; profiled against Hiya, RoboKiller, Nomorobo, Call Control)",
+      "summary": "Truecaller is the dominant generic call/spam-blocker on the iOS App Store (250M+ global users, ~4.4-4.5 stars from ~247K-251K US ratings), competing with Hiya (curated carrier-grade DB, ~4.6/200K+), RoboKiller (answer-bots, subscription-only), Nomorobo ($1.99/mo blocklist) and Call Control (community blocklist). The whole category shares the same structural weaknesses on iPhone: Apple's Call Directory Extension prevents live screening, so these apps depend on cloud/crowdsourced lookups that miss spoofed local numbers, produce silent false positives with no easy whitelist, and feel far weaker than their Android versions. Truecaller specifically carries the heaviest privacy baggage: its database was historically built by uploading users' entire address books, so non-users end up in a searchable directory without consent, and its iOS App Privacy label declares contacts + identifiers as both \"Data Linked to You\" and \"Data Used to Track You.\" This is the clean differentiator for an on-device, no-contact-upload, no-tracking blocker with genuine EU/DE coverage. Pricing has also crept up (Premium $9.99/mo or $74.99/yr, Gold ~$249/yr) with recurring complaints of surprise auto-renewals and broken family plans.",
+      "features": [
+        "Real-time caller ID for iPhone (rolled out Jan 2025 via Apple's Live Caller ID Lookup, iOS 18+) - previously iOS lacked live ID entirely",
+        "Spam call blocking via Apple's Call Directory Extension (batch-synced blocklist, not live screening)",
+        "Global crowdsourced/community spam database (250M+ users; claims 25-31B+ calls blocked) - this is CLOUD/crowdsourced lookup, not on-device",
+        "Caller ID / name lookup and reverse number lookup for unknown numbers",
+        "SMS spam filtering via Apple's Message Filter extension (limited on iOS vs Android)",
+        "Call recording and AI call-screening ('digital assistant') on higher tiers",
+        "Family plan (shared subscription across members)",
+        "Manual block list and community 'mark as spam' reporting"
+      ],
+      "price": "Free ad-supported tier. Premium Monthly $9.99, Premium Yearly $74.99; Family plan $14.99/mo or $99.99/yr; top-tier Gold ~$249/yr. Competitors for reference: RoboKiller is subscription-only (~$24.99/yr promo, no meaningful free tier, aggressive auto-renew), Nomorobo $1.99/mo per device, Hiya free + premium (~$3.99/mo), Call Control free + premium.",
+      "rating": "Truecaller ~4.4-4.5 stars on the US App Store from ~247K-251K ratings (varies by storefront/snapshot; App Store page shows 4.4/251K, third-party reviews cite 4.5/245-247K). Hiya ~4.6 (200K+ reviews); RoboKiller ~4.6 on App Store but 1.5/5 from ~420 reviews on PissedConsumer driven by billing complaints; Nomorobo ~4.5; Call Control ~4.4.",
+      "privacyNotes": "CORE DIFFERENTIATOR AREA - be precise. Truecaller's iOS App Privacy label declares an unusually broad footprint: \"Data Linked to You\" includes contact info (phone, email, name, address), purchase history, location, search history, user content, device identifiers and usage data; and it additionally lists identifiers + usage data under \"Data Used to Track You\" (tracking across other apps/websites) for advertising/analytics/personalization. The signature controversy is contact harvesting: historically Truecaller built its directory by uploading users' entire address books, so people who never installed the app can still be listed in a publicly searchable database because a friend uploaded their contacts, without notice or consent (ConsumerAffairs, TheNextWeb, Beebom). Truecaller's official rebuttal is that to comply with Apple/Google policies it has NOT uploaded the address book of App Store/Play-Store downloaders since ~2012, instead crowdsourcing via a post-call \"who called?\" popup, and says it works with ad partners but \"would never sell your personal data.\" However, review-analysis articles (CompassITC, Techsive) still state the app \"requires access to your contacts to function\" and \"your contacts may be uploaded to Truecaller's servers.\" Removing yourself is hostile: unlisting requires an SMS-based opt-out flow, is irreversible, strips all spam protection, and is blocked entirely if your number is already marked as spam. Net: an on-device-only blocker that never uploads the address book, doesn't track the user across apps, and doesn't monetize contact data is a defensible, marketable contrast. By comparison Hiya and Nomorobo use curated/carrier-grade lists rather than user-uploaded contacts and draw far fewer privacy complaints, while Call Control also requests broad contacts + call-history access.",
+      "painpoints": [
+        {
+          "complaint": "Privacy horror - contact harvesting and being listed without consent. Users are disturbed that installing the app 'hands over your entire contact list to a company in another country,' and that non-users get pulled into a searchable directory because a friend uploaded their contacts. Compounded by an iOS privacy label that marks contacts + identifiers as tracked data.",
+          "evidence": "App Store review sentiment and comparison writeups: 'Truecaller has my name and number because a friend uploaded their contacts'; 'To use Truecaller you hand over your entire contact list' (Unstar 2026 comparison). ConsumerAffairs/TheNextWeb document non-users appearing in the DB without notice; unlisting is irreversible and blocked if your number is flagged spam. iOS App Privacy label lists contacts under both 'Data Linked to You' and 'Data Used to Track You.'"
+        },
+        {
+          "complaint": "Aggressive/expensive pricing, surprise auto-renewals and broken paywall flows. Premium has climbed to $9.99/mo / $74.99/yr with a $249/yr Gold tier; users report silent auto-upgrades and family-plan purchases that 'succeed' but don't work.",
+          "evidence": "App Store reviews: users 'upgraded from lower subscriptions to Gold Premium in January 2026 without requesting auto-renewal'; Family Plan showed a purchase-successful message when it wasn't, and after buying there was 'no option to add family members, only a Leave Family button.' RoboKiller shows the extreme version: 1.5/5 across ~420 PissedConsumer reviews citing unauthorized charges and near-impossible cancellation."
+        },
+        {
+          "complaint": "False positives with no easy whitelist and, worse, silent blocks - legitimate calls (schools, doctors, delivery drivers, recruiters) sent to voicemail or dropped with no notification.",
+          "evidence": "'Truecaller flagged my kid's school as spam because it calls from an unknown number'; RoboKiller 'blocked my doctor's office calling with test results'; Hiya 'silently sent a job recruiter to my blocked list. I found out a week later'; Call Control 'blocked my pharmacy because someone in the community flagged the number.' Cross-app conclusion: 'a call that never rings and never notifies is far more damaging than spam getting through' (Unstar 2026)."
+        },
+        {
+          "complaint": "Feels broken/crippled on iPhone vs Android, and caller ID often 'does nothing' - confusing extension setup and identification that silently stops working.",
+          "evidence": "App Store review from a paying user on iOS 18.2: the app 'has DONE NOTHING to identify any call' despite premium. Apple Support discussion thread (255629442): caller-ID notifications stopped working after an iOS 17 update even with everything enabled; toggling all Truecaller identifier settings in the Phone app didn't fix it. All apps 'perform markedly worse on iPhone due to Apple's Call Directory Extension restrictions preventing live screening' (Unstar)."
+        },
+        {
+          "complaint": "Ad-heavy free tier interrupts the core flow.",
+          "evidence": "'Truecaller free is buried in ads, full-screen ones after every call'; users report '15-second ads during quick searches' (Unstar comparison; App Store review roundup)."
+        },
+        {
+          "complaint": "Doesn't stop spoofed / neighbor-spoofed local numbers - the exact calls people install it for.",
+          "evidence": "App Store reviews note the app 'doesn't block spoofed calls' and 'requires manual configuration to be functional.' Category-wide: 'spam calls now spoof real local businesses. The app cannot tell the difference and neither can I' (Unstar). RoboKiller users: 'costs money and I still get the car warranty call from a new number.'"
+        },
+        {
+          "complaint": "Weak SMS / smishing protection on iOS - many buyers assume text-spam filtering works and it largely doesn't.",
+          "evidence": "RoboKiller markets '99% of spam texts blocked' yet users report 'You still get all the spam texts.' On iOS, SMS filtering is constrained to Apple's Message Filter extension, and the comparison analysis notes SMS filtering is essentially absent from the category's real-world performance (focus is calls only)."
+        },
+        {
+          "complaint": "Coverage quality depends on local user density, so crowdsourced apps are strongest where they have mass (US/India) and thinner elsewhere - poor fit for a Europe/DE-first product.",
+          "evidence": "Effectiveness 'varies by region' and 'some users have reported issues with spam filtering and caller identification accuracy' (CompassITC). Detection is a function of how many local users report numbers ('more users mean more spam reports'), which structurally disadvantages lower-density markets; niche apps like WideProtect explicitly differentiate on pre-configured DE/EU prefixes, implying the crowdsourced incumbents under-serve those regions."
+        }
+      ]
+    }
+  ],
+  "synthesis": {
+    "verifiedPainpoints": [
+      {
+        "painpoint": "Contact harvesting / crowdsourced cloud database exposes non-users without consent and is nearly impossible to escape",
+        "severity": "high",
+        "note": "Truecaller is the worst offender (non-users land in a searchable directory; unlisting is buried and blocked if flagged as spam). YouMail and RoboKiller also upload the user's address book to the cloud. Even 'cleaner' players (Hiya, Nomorobo, Whoscall) still crowdsource call metadata into a global DB."
+      },
+      {
+        "painpoint": "Privacy theater: apps marketed as safe still track users and share/monetize data",
+        "severity": "high",
+        "note": "Truecaller's iOS label lists data 'Used to Track You' for advertising. RoboKiller says 'we never sell your data' yet its label discloses contacts + cross-company trackable identifiers. YouMail concedes CCPA 'sale' disclosures. Whoscall and Should I Answer run ad/tracking SDKs in the free tier."
+      },
+      {
+        "painpoint": "Aggressive/surprise pricing, auto-renew traps, refused refunds, near-impossible cancellation",
+        "severity": "high",
+        "note": "Universal. Truecaller ($9.99/mo, Gold ~$249/yr) silent Gold auto-upgrades; RoboKiller ~38 tiers, hike to $89.99/yr, unauthorized charges (PissedConsumer 1.5); Nomorobo 'DON'T PAY YEARLY YOU CAN'T STOP IT' (Trustpilot 1.6); YouMail 'free trial' that charges; Hiya inconsistent pricing across surfaces; Should I Answer bait-and-switch $1.99/mo."
+      },
+      {
+        "painpoint": "False positives: legitimate calls (doctors, schools, family, recruiters) blocked or silently dropped with weak/no whitelist",
+        "severity": "high",
+        "note": "Every competitor. Truecaller flags a kid's school and refuses to remove spam markings; RoboKiller blocks a doctor returning test results; Hiya blocks medical practices; Nomorobo silences appointment reminders and even numbers in the user's own contacts; YouMail blocks whitelisted home-monitoring calls. A silent block is worse than spam getting through."
+      },
+      {
+        "painpoint": "'Installed it, does nothing' — confusing iOS extension setup that silently breaks after updates",
+        "severity": "high",
+        "note": "Structural to iOS CallKit but universally mishandled. Whoscall's toggle auto-disables and re-enabling errors out; Hiya's own docs admit an iOS defect where the switch never appears; Nomorobo Max 'works once then stops'; Truecaller 'has done nothing' even on iOS 18.2; setup buried in Settings for all."
+      },
+      {
+        "painpoint": "Weak or absent SMS / smishing protection on iOS",
+        "severity": "high",
+        "note": "The clearest category gap. Should I Answer is calls-only; Hiya removed free text-spam blocking; RoboKiller and Nomorobo users say texts are never blocked; Truecaller's SMS is region-limited category sorting, not smishing defense; Whoscall paywalls SMS Assistant; YouMail admits it 'cannot fully block SMS delivery.'"
+      },
+      {
+        "painpoint": "Doesn't actually block spam — just labels it while letting it ring through",
+        "severity": "high",
+        "note": "Hiya 'lets spammers keep ringing, only notifying they are reported'; RoboKiller 'blocks nothing' after trial; Nomorobo effectiveness collapses once billed (2 of 24 scams labeled); Should I Answer catches ~1 in 20; Whoscall 'blocked nothing.'"
+      },
+      {
+        "painpoint": "US / India / APAC-centric coverage — weak in EU and Germany",
+        "severity": "high",
+        "note": "RoboKiller and Nomorobo are US/Canada-only; Hiya's smart features (Screener, AI/Fraud) are US/CA-only; YouMail lookup is US/CA-only and relies on US carrier codes; Truecaller is dense in US/India and thin in the EU; Whoscall is tuned for Taiwan/Japan/Korea/SEA. Crowdsourced accuracy structurally disadvantages lower-density DE/EU."
+      },
+      {
+        "painpoint": "Ad-heavy free tier — intrusive, loud, sometimes unskippable ads",
+        "severity": "med",
+        "note": "Truecaller free is 'buried in ads, full-screen after every call'; YouMail ads are 'huge, intrusive, very loud, no X'; Whoscall uses full-screen ads with fake close buttons; Should I Answer shows ads even to paying subscribers."
+      },
+      {
+        "painpoint": "Doesn't stop spoofed / neighbor-spoofed local numbers — the exact calls people install it for",
+        "severity": "med",
+        "note": "Category-wide limitation of static crowdsourced lists (Truecaller, RoboKiller). Nomorobo markets neighbor-spoofing detection but users still get spoofed scam calls from rotating numbers."
+      },
+      {
+        "painpoint": "Poor or non-existent customer support",
+        "severity": "med",
+        "note": "RoboKiller (canned/AI replies, dead support number), Nomorobo ('check the FAQ' or no reply), YouMail (no phone support, refuses refunds) all cited; drives the gap between App Store scores and Trustpilot/PissedConsumer 1.5-2.0."
+      },
+      {
+        "painpoint": "No visibility into what was blocked / clunky UX",
+        "severity": "low",
+        "note": "Should I Answer users complain there is no recent-call search and no view of which calls were blocked, undermining the point of a blocker; Nomorobo Max masks callers as 'screened caller.'"
+      }
+    ],
+    "differentiation": [
+      {
+        "painpoint": "Contact harvesting and non-consensual crowdsourced databases",
+        "ourAnswer": "100% on-device. Your address book and blocklist never leave the iPhone — no upload, no cloud lookup per call, no crowdsourcing of anyone's number. We ship an App Store privacy label of 'Data Not Collected' and can honestly say we cannot expose a non-user because we never receive their number."
+      },
+      {
+        "painpoint": "Privacy theater / tracking and data monetization",
+        "ourAnswer": "Zero ad SDKs and zero third-party trackers. We make money only from one honest subscription, never from data. Nothing to sell because processing happens locally — the marketing claim and the technical architecture match."
+      },
+      {
+        "painpoint": "Aggressive pricing, auto-renew traps, hard cancellation",
+        "ourAnswer": "One fair flat price. No free-ad tier, no Gold up-sell, no 38 confusing SKUs, no surprise hikes. Billed transparently through Apple so cancellation is one tap in the App Store — no email-us-five-times dark pattern."
+      },
+      {
+        "painpoint": "False positives with weak whitelist",
+        "ourAnswer": "One-tap whitelist plus Contacts always treated as trusted, locally and by default. Adjustable protection levels, and we never silently drop a call — everything blocked is logged and reversible, so a wrong flag is fixed in a tap, not permanent like Truecaller's 'we don't remove spam markings.'"
+      },
+      {
+        "painpoint": "'Installed it, does nothing' setup that silently breaks",
+        "ourAnswer": "Guided in-app setup plus a built-in health check that detects when iOS has disabled the Call Directory / SMS Filter extension and walks the user through re-enabling it — instead of failing silently."
+      },
+      {
+        "painpoint": "Weak or missing SMS / smishing protection",
+        "ourAnswer": "Calls AND texts in one app, on-device. Junk-SMS filtering plus smishing link/scam-pattern detection is core and never paywalled — directly answering the calls-only (Should I Answer) and paywalled-SMS (Hiya, Whoscall) gaps."
+      },
+      {
+        "painpoint": "Just labels spam instead of blocking it",
+        "ourAnswer": "Real blocking by default via the Call Directory extension — spam calls are stopped, not merely tagged while they ring. No 'we took your money and the calls came back' regression."
+      },
+      {
+        "painpoint": "US/APAC-centric coverage, weak in EU/Germany",
+        "ourAnswer": "EU/DE-first. We ship a bundled offline database of German and EU spam prefixes/patterns, refreshed by a lightweight static remote list — no crowdsourcing density required, so coverage works on day one in low-density markets where incumbents are blind."
+      },
+      {
+        "painpoint": "Ad-heavy, intrusive free experience",
+        "ourAnswer": "No ads, ever — not in the free trial, not for anyone. The one subscription is the only monetization, so there is no incentive to interrupt the core flow."
+      },
+      {
+        "painpoint": "No visibility into what was blocked",
+        "ourAnswer": "A clear blocked-activity log for both calls and texts, so users can see exactly what was stopped and instantly whitelist anything caught by mistake."
+      }
+    ],
+    "positioning": "The only iPhone spam blocker that keeps your contacts and blocklist entirely on-device — stopping spam calls and scam texts together, with genuine EU coverage and one fair, ad-free price.",
+    "headlines": [
+      "Auto-Block Every Spam Call",
+      "Kill Junk & Scam Texts",
+      "Contacts Never Leave Your Phone",
+      "Whitelist Real Callers in a Tap",
+      "See Everything You Blocked"
+    ],
+    "keywords": [
+      "spam blocker",
+      "spam call blocker",
+      "call blocker",
+      "robocall blocker",
+      "block spam calls",
+      "spam text blocker",
+      "junk sms blocker",
+      "smishing protection",
+      "scam call blocker",
+      "block unknown callers",
+      "caller id",
+      "block texts",
+      "scam text blocker",
+      "privacy call blocker",
+      "spam protection",
+      "block calls and texts",
+      "on-device spam blocker",
+      "spam call and text blocker"
+    ],
+    "competitorTable": [
+      {
+        "name": "Truecaller",
+        "price": "Premium $9.99/mo, $74.99/yr; Gold ~$249/yr; free tier ad-supported",
+        "rating": "~4.4-4.5, ~251K US ratings",
+        "keyGap": "Crowdsourced cloud DB exposes non-users' numbers without consent; iOS label tracks contacts + identifiers for ads; ad-choked free tier; SMS is weak region-limited category sorting; won't remove false spam flags."
+      },
+      {
+        "name": "Hiya",
+        "price": "Free; Premium $3.99/mo, $9.99/qtr, $24.99/yr (+$2.99/mo Lookup)",
+        "rating": "4.5, ~237K US ratings (Trustpilot/JustUseApp far lower)",
+        "keyGap": "Moved once-free auto-block and free SMS-spam blocking behind paywall; free tier only labels spam; Screener/AI/Fraud are US/CA-only; breaks after updates; no real EU consumer coverage."
+      },
+      {
+        "name": "RoboKiller",
+        "price": "Confusing tiers $5.99-$89.99/yr (~38 SKUs); annual hiked to $89.99",
+        "rating": "4.5 App Store (~414K) vs 1.5 PissedConsumer",
+        "keyGap": "US/Canada only; billing traps, unauthorized charges and refused refunds; uploads contacts + cross-company trackable identifiers despite 'never sell your data' marketing; texts still slip through."
+      },
+      {
+        "name": "Nomorobo",
+        "price": "Basic $2.99/mo or $19.99/yr; Max ~$49.99/yr; Family ~$79.99/yr",
+        "rating": "4.5, ~22K (Trustpilot 1.6; JustUseApp ~53-100% negative)",
+        "keyGap": "US-only; hard-to-cancel annual billing; Max screener plays a Nomorobo ad to callers and masks them as 'screened caller'; SMS often never blocks; formerly-free landline blocking paywalled Jan 2026."
+      },
+      {
+        "name": "YouMail",
+        "price": "Free ad-supported; Plus $7.99/mo (~$71.99/yr); Essentials $14.99/mo",
+        "rating": "4.7, ~98K (Trustpilot 2.0; PissedConsumer ~1.8)",
+        "keyGap": "Hijacks voicemail via US carrier call-forwarding (cloud, not on-device); uploads contacts; ad-tracking + CCPA 'sale'; loud unskippable ads; blocks whitelisted callers; US/CA only, unfit for EU."
+      },
+      {
+        "name": "Whoscall",
+        "price": "Free ad-supported; Premium $2.89/mo, $27/yr; Ad-Free $0.99/mo or $18 lifetime",
+        "rating": "4.7, ~3K US ratings",
+        "keyGap": "APAC-centric — weak/misidentifying on EU/DE numbers; full-screen ads with fake close buttons; auto-block, auto-updated DB, real-time lookup and SMS Assistant all paywalled; extension silently disables itself."
+      },
+      {
+        "name": "Should I Answer",
+        "price": "Free; subscription ~$1.99/mo for caller ID, blocking, DB updates",
+        "rating": "2.6, ~470 US ratings",
+        "keyGap": "Genuinely private (no contact upload) but calls-only with no SMS/smishing; poor detection (~1 in 20); surprise paywall behind 'free' pitch; ads even for paying users; no blocked-call visibility."
+      }
+    ]
+  },
+  "naming": {
+    "candidates": [
+      {
+        "name": "Nixring",
+        "available": true,
+        "notes": "CHOSEN. iTunes API rc=1 (only 'Nix Toolkit', unrelated), no exact trackName match. Web + trademark search found no conflicting app or mark. 'Nix' = reject/cancel + 'ring' = call -> reads as 'block the call'. 7 chars, coined, ownable, call-forward for ASO."
+      },
+      {
+        "name": "Nullring",
+        "available": true,
+        "notes": "iTunes API rc=0 -> completely clear on App Store. Trademark search found no company/mark. 'null the ring' = silence the call. 8 chars, cleanest slate of the set. Strong backup."
+      },
+      {
+        "name": "Callmoat",
+        "available": true,
+        "notes": "iTunes API rc=15 (generic VoIP/call apps incl competitor 'Kabe: Block Spam Call/SMS'), no exact trackName match. Trademark search clean. Moat = defensive shield around your calls; evokes protection. 8 chars. Strong backup."
+      },
+      {
+        "name": "Nixwall",
+        "available": true,
+        "notes": "iTunes API rc=13 (firewall/security apps: Guardian, Firewalla), no exact trackName match. 'nix + wall' = a wall that rejects. 7 chars, on-theme for shielding. Backup."
+      },
+      {
+        "name": "Quellio",
+        "available": true,
+        "notes": "iTunes API rc=10, all unrelated Italian-market apps, no exact match. Coined from 'quell' (suppress). 7 chars, elegant but more abstract / less obviously about calls."
+      },
+      {
+        "name": "Ringfort",
+        "available": true,
+        "notes": "iTunes API rc=11 (ring-sizer apps dominate), no exact match. Nice double meaning (defensive fort + ring/call) but it's a real word (ancient Irish fortification) -> less ownable and ASO diluted."
+      },
+      {
+        "name": "Muteguard",
+        "available": true,
+        "notes": "iTunes API rc=15 (all hearing-aid apps, unrelated), no exact match. 'mute + guard' evokes silencing + protection. 9 chars; semantic space leans audio/hearing."
+      },
+      {
+        "name": "Bouncr",
+        "available": true,
+        "notes": "iTunes API rc=13 (bounce/luggage/game apps), no exact match. Trendy dropped-vowel but 'bounce' is heavily used and signals little about privacy."
+      },
+      {
+        "name": "Hushwall",
+        "available": false,
+        "notes": "No exact trackName, BUT 'HushWall: Screen Time Blocker' already ships under the HushWall brand -> same-name collision. Avoid."
+      },
+      {
+        "name": "Spamnix",
+        "available": false,
+        "notes": "No iOS exact match, but 'Spamnix' is an existing anti-spam product (Eudora plug-in built on SpamAssassin, ~$30) -> established brand / trademark baggage. Avoid."
+      },
+      {
+        "name": "Privora",
+        "available": false,
+        "notes": "TAKEN. Exact trackName match 'Privora' plus a whole privacy family (Privora VPN, Privora Private AI Browser, Privora Vault)."
+      },
+      {
+        "name": "Vaultline",
+        "available": false,
+        "notes": "TAKEN. Exact trackName match 'Vaultline' on the App Store."
+      }
+    ],
+    "chosen": "Nixring",
+    "title": "Nixring: Spam Call Blocker",
+    "subtitle": "Block spam calls & junk texts",
+    "rationale": "Nixring is free on both checks: the iTunes API returned only one unrelated result ('Nix Toolkit') with no exact trackName match, and a web/trademark search surfaced no conflicting app, product, or mark. It cleanly avoids all the blocked names (CallShield, SpamShield, RoboKiller, Hiya, Truecaller, etc.). As a brand it's coined, punchy, and 7 chars: 'nix' (to reject/cancel) + 'ring' (an incoming call) reads instantly as 'kill the call', which aligns with the dominant, high-volume ASO term 'call blocker' while the subtitle carries the texts + privacy story. Char counts: title 'Nixring: Spam Call Blocker' = 26 chars (<=30, fits comfortably; the fuller 'Spam Call & Text Blocker' would be 33 and overflow, so calls lead the title and texts move to the subtitle). Subtitle 'Block spam calls & junk texts' = 29 chars (<=30) and explicitly covers both calls and texts. Backups Nullring (App Store rc=0, cleanest possible slate), Callmoat (moat = protective shield metaphor), and Nixwall (nix + wall, on-theme for blocking) are all iTunes-clean with no exact-name collisions.",
+    "backups": [
+      "Nullring",
+      "Callmoat",
+      "Nixwall"
+    ]
+  }
+}

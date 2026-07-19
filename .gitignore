@@ -1,0 +1,29 @@
+# Xcode / build
+*.xcodeproj
+*.xcworkspace
+!default.xcworkspace
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.xcarchive
+.DS_Store
+
+# SPM
+.build/
+Packages/*/.build/
+
+# Secrets / signing
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+.secrets/
+ExportOptions*.plist
+
+# Scratch
+*.log
+scratch/
+
+# local build state
+.nixring-ids.env
