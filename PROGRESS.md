@@ -1,5 +1,11 @@
 # Nixring — Build Progress
 
+## 🟢 SUBMITTED 2026-07-20 — version 1.0 + both subs = WAITING_FOR_REVIEW (AFTER_APPROVAL)
+First-sub-with-version cracked via API: `POST /v1/reviewSubmissionItems` with a **`subscriptionVersion`**
+relationship (item-type 18) per sub — the sub's version from `GET /v1/subscriptions/{id}/versions`,
+NOT `subscription` (409) — into the version's reviewSubmission `d2a320a4`, then `asc review
+submissions-submit --confirm`. Bundle: appStoreVersion(6) + subscriptionGroupVersion(19) + 2×subscriptionVersion(18).
+
 **App:** Nixring — privacy-first spam call + junk SMS blocker (iOS 17+, SwiftUI)
 **Repo:** lawoflarge/nixring (private) · **ASC App ID:** 6792562928 · **Team:** R95M36AU2X
 Canonical identifiers → `.nixring-ids.env`
