@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support & FAQ — Nixring</title>
+<meta name="description" content="Nixring support and FAQ: how to enable the Call Directory extension, how blocking works, and how to manage your subscription.">
+<meta name="theme-color" content="#060d1a">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root{
+    --bg:#060d1a;--bg-2:#0a1424;--surface:rgba(255,255,255,.045);--border:rgba(255,255,255,.09);
+    --text:#e9f0fa;--muted:#9db0cb;--accent:#38bdf8;--accent-2:#3b82f6;--radius:20px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#eef4fb;--bg-2:#fff;--surface:#fff;--border:rgba(10,30,60,.10);
+      --text:#0b1b33;--muted:#4d6180;--accent:#0284c7;--accent-2:#2563eb;}
+  }
+  :root[data-theme="dark"]{--bg:#060d1a;--bg-2:#0a1424;--surface:rgba(255,255,255,.045);
+    --border:rgba(255,255,255,.09);--text:#e9f0fa;--muted:#9db0cb;--accent:#38bdf8;--accent-2:#3b82f6;}
+  :root[data-theme="light"]{--bg:#eef4fb;--bg-2:#fff;--surface:#fff;--border:rgba(10,30,60,.10);
+    --text:#0b1b33;--muted:#4d6180;--accent:#0284c7;--accent-2:#2563eb;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--border)}
+  .nav-inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;align-items:center;
+    justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .nav-links{display:flex;gap:24px;font-size:15px;color:var(--muted);font-weight:500}
+  .nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--text);text-decoration:none}
+  @media(max-width:560px){.nav-links{display:none}}
+  .doc{padding:56px 0 72px}
+  .doc h1{font-size:clamp(30px,5vw,42px);letter-spacing:-.03em;font-weight:800;margin-bottom:8px}
+  .sub{color:var(--muted);font-size:17px;margin-bottom:36px}
+  .doc h2{font-size:22px;letter-spacing:-.02em;font-weight:700;margin:40px 0 14px}
+  .doc p{color:var(--muted);margin-bottom:14px}
+  .doc ol,.doc ul{color:var(--muted);margin:0 0 16px 22px}
+  .doc li{margin-bottom:9px}
+  .doc strong{color:var(--text)}
+  .faq{background:var(--surface);border:1px solid var(--border);border-radius:16px;
+    padding:22px 24px;margin-bottom:14px}
+  .faq h3{font-size:17px;letter-spacing:-.01em;font-weight:700;margin-bottom:8px}
+  .faq p{margin:0}
+  .steps-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px 28px;margin:20px 0}
+  .steps-card ol{margin-bottom:0}
+  .help-cta{background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(59,130,246,.10));
+    border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px;text-align:center;margin-top:40px}
+  .help-cta h2{margin:0 0 8px}
+  .help-cta a.btn{display:inline-block;margin-top:14px;background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    color:#fff;padding:12px 22px;border-radius:13px;font-weight:600}
+  .help-cta a.btn:hover{text-decoration:none;opacity:.92}
+  footer{border-top:1px solid var(--border);padding:32px 0 46px}
+  .foot-inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;flex-wrap:wrap;gap:18px;
+    justify-content:space-between;align-items:center}
+  .foot-links{display:flex;gap:22px;font-size:15px;flex-wrap:wrap}
+  .foot-links a{color:var(--muted)}.foot-links a:hover{color:var(--text);text-decoration:none}
+  .copy{color:var(--muted);font-size:14px;margin-top:18px;text-align:center;width:100%}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/"><img src="/logo-512.png" alt="Nixring logo">Nixring</a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="wrap">
+    <h1>Support &amp; FAQ</h1>
+    <p class="sub">Everything you need to get Nixring blocking spam. Still stuck? Email us anytime.</p>
+
+    <h2>Enable call blocking</h2>
+    <p>iOS requires you to switch Nixring on once before it can block calls. It takes about 30 seconds:</p>
+    <div class="steps-card">
+      <ol>
+        <li>Open the <strong>Settings</strong> app on your iPhone.</li>
+        <li>Tap <strong>Apps</strong>, then <strong>Phone</strong>. (On older iOS versions this is Settings → Phone.)</li>
+        <li>Tap <strong>Call Blocking &amp; Identification</strong>.</li>
+        <li>Turn on the switch next to <strong>Nixring</strong>.</li>
+        <li>If it was already on, toggle it off and on again to refresh the blocklist.</li>
+      </ol>
+    </div>
+
+    <h2>Enable text (SMS) filtering</h2>
+    <div class="steps-card">
+      <ol>
+        <li>Open <strong>Settings</strong> → <strong>Apps</strong> → <strong>Messages</strong>.</li>
+        <li>Tap <strong>Unknown &amp; Spam</strong>.</li>
+        <li>Under <strong>SMS Filtering</strong>, select <strong>Nixring</strong>.</li>
+      </ol>
+    </div>
+    <p>Filtered texts from unknown senders are moved to a separate <strong>Junk</strong> tab in Messages, and you won't get a notification for them.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq">
+      <h3>How does Nixring block spam?</h3>
+      <p>Nixring hands iOS a list of known spam and scam numbers through Apple's Call Directory and Message Filter extensions. iOS then blocks matching calls and filters matching texts automatically — the app itself doesn't need to be running.</p>
+    </div>
+    <div class="faq">
+      <h3>Nixring doesn't appear under Call Blocking &amp; Identification.</h3>
+      <p>Open the Nixring app once first so iOS can register the extension, then reboot your iPhone if it still isn't listed. The extension usually appears within a minute of first launch.</p>
+    </div>
+    <div class="faq">
+      <h3>A spam call still got through. Why?</h3>
+      <p>No blocklist can catch every number — spammers constantly rotate. Nixring blocks known offenders; brand-new numbers may slip through until the list is updated. Toggling Nixring off and on under Call Blocking &amp; Identification refreshes the list.</p>
+    </div>
+    <div class="faq">
+      <h3>Will Nixring block my real contacts or important calls?</h3>
+      <p>No. Nixring only blocks numbers on its spam blocklist. Numbers in your contacts and legitimate callers are unaffected.</p>
+    </div>
+    <div class="faq">
+      <h3>Does Nixring send my data anywhere?</h3>
+      <p>Never. Nixring runs 100% on-device with no accounts and no servers. See our <a href="/privacy.html">Privacy Policy</a> for full details.</p>
+    </div>
+
+    <h2>Manage your subscription</h2>
+    <p>Nixring subscriptions are billed through your Apple ID. To view, change, or cancel:</p>
+    <div class="steps-card">
+      <ol>
+        <li>Open <strong>Settings</strong> and tap your name at the top.</li>
+        <li>Tap <strong>Subscriptions</strong>.</li>
+        <li>Select <strong>Nixring</strong> to change your plan or cancel.</li>
+      </ol>
+    </div>
+    <p>Cancelling stops the next renewal; you keep access until the end of the current billing period. Refund requests are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+    <div class="help-cta">
+      <h2>Still need help?</h2>
+      <p style="margin:0;color:var(--muted)">We usually reply within a couple of days.</p>
+      <a class="btn" href="mailto:levin.schwab@gmx.de">Email Support</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <nav class="foot-links">
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:levin.schwab@gmx.de">Contact</a>
+    </nav>
+    <div class="copy">© 2026 Levin Schwab</div>
+  </div>
+</footer>
+</body>
+</html>

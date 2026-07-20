@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nixring — Spam Call & Text Blocker for iPhone</title>
+<meta name="description" content="Block spam calls and texts on your iPhone. 100% on-device, privacy-first. Nothing is ever uploaded. Nixring is a CallKit spam blocker with an on-device blocklist.">
+<meta name="theme-color" content="#060d1a">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Nixring — Spam Call & Text Blocker">
+<meta property="og:description" content="Block spam calls & texts. 100% on-device. Nothing uploaded.">
+<meta property="og:image" content="/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nixring.vercel.app">
+<style>
+  :root{
+    --bg:#060d1a; --bg-2:#0a1424; --surface:rgba(255,255,255,.045);
+    --surface-solid:#0e1a2e; --border:rgba(255,255,255,.09);
+    --text:#e9f0fa; --muted:#9db0cb; --accent:#38bdf8; --accent-2:#3b82f6;
+    --shadow:0 24px 60px -20px rgba(0,0,0,.65); --radius:20px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#eef4fb; --bg-2:#ffffff; --surface:#ffffff; --surface-solid:#ffffff;
+      --border:rgba(10,30,60,.10); --text:#0b1b33; --muted:#4d6180;
+      --accent:#0284c7; --accent-2:#2563eb; --shadow:0 20px 45px -22px rgba(15,40,80,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#060d1a; --bg-2:#0a1424; --surface:rgba(255,255,255,.045);
+    --surface-solid:#0e1a2e; --border:rgba(255,255,255,.09);
+    --text:#e9f0fa; --muted:#9db0cb; --accent:#38bdf8; --accent-2:#3b82f6;
+    --shadow:0 24px 60px -20px rgba(0,0,0,.65);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef4fb; --bg-2:#ffffff; --surface:#ffffff; --surface-solid:#ffffff;
+    --border:rgba(10,30,60,.10); --text:#0b1b33; --muted:#4d6180;
+    --accent:#0284c7; --accent-2:#2563eb; --shadow:0 20px 45px -22px rgba(15,40,80,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted);font-weight:500}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:600px){.nav-links{display:none}}
+  /* hero */
+  .hero{position:relative;text-align:center;padding:84px 0 72px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);
+    width:760px;height:760px;border-radius:50%;
+    background:radial-gradient(circle,rgba(56,189,248,.22),transparent 62%);
+    filter:blur(20px);z-index:0;pointer-events:none}
+  .hero-logo{width:118px;height:118px;border-radius:27px;position:relative;z-index:1;
+    box-shadow:var(--shadow);margin-bottom:26px}
+  .hero h1{position:relative;z-index:1;font-size:clamp(34px,6vw,56px);line-height:1.05;
+    letter-spacing:-.035em;font-weight:800;margin-bottom:18px}
+  .grad{background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.lead{position:relative;z-index:1;font-size:clamp(17px,2.4vw,21px);color:var(--muted);
+    max-width:560px;margin:0 auto 34px}
+  .cta-row{position:relative;z-index:1;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .appstore{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(120deg,var(--accent),var(--accent-2));
+    color:#fff;padding:14px 24px;border-radius:15px;font-weight:600;font-size:16px;
+    box-shadow:0 14px 30px -10px rgba(56,130,246,.55);transition:transform .15s ease,box-shadow .15s ease}
+  .appstore:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(56,130,246,.7)}
+  .appstore svg{width:26px;height:26px}
+  .appstore small{display:block;font-size:11px;font-weight:500;opacity:.85;line-height:1.1}
+  .appstore .big{font-size:19px;font-weight:700;line-height:1.1}
+  .pill{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:100px;
+    padding:7px 15px;margin-bottom:26px;background:var(--surface);font-weight:500}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+  /* section */
+  section{padding:60px 0}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 46px}
+  .sec-head h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.03em;font-weight:800;margin-bottom:12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:30px 28px;transition:transform .18s ease,border-color .18s ease}
+  .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
+  .ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(59,130,246,.14));
+    border:1px solid var(--border);margin-bottom:18px}
+  .ico svg{width:27px;height:27px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:19px;letter-spacing:-.02em;margin-bottom:9px;font-weight:700}
+  .card p{color:var(--muted);font-size:15.5px}
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+  @media(max-width:680px){.steps{grid-template-columns:1fr}}
+  .step{position:relative;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:28px 24px 26px}
+  .step .num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));margin-bottom:16px;font-size:16px}
+  .step h4{font-size:17px;margin-bottom:7px;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15px}
+  /* privacy banner */
+  .banner{background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(59,130,246,.10));
+    border:1px solid var(--border);border-radius:24px;padding:44px 40px;text-align:center}
+  .banner h2{font-size:clamp(24px,3.6vw,32px);letter-spacing:-.03em;margin-bottom:14px;font-weight:800}
+  .banner p{color:var(--muted);font-size:17px;max-width:600px;margin:0 auto}
+  .banner .big-emoji{font-size:40px;margin-bottom:8px}
+  /* footer */
+  footer{border-top:1px solid var(--border);margin-top:40px;padding:42px 0 54px}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:700}
+  .foot-brand img{width:30px;height:30px;border-radius:8px}
+  .foot-links{display:flex;gap:24px;font-size:15px;color:var(--muted);flex-wrap:wrap}
+  .foot-links a:hover{color:var(--text)}
+  .copy{color:var(--muted);font-size:14px;margin-top:22px;text-align:center;width:100%}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><img src="/logo-512.png" alt="Nixring logo">Nixring</a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill"><span class="dot"></span>100% on-device · nothing uploaded</span>
+      <br>
+      <img class="hero-logo" src="/logo-512.png" alt="Nixring app icon">
+      <h1>Block spam calls<br>& texts. <span class="grad">On your terms.</span></h1>
+      <p class="lead">Nixring silences unwanted callers and junk texts on your iPhone using an on-device blocklist. Private by design — your numbers never leave your phone.</p>
+      <div class="cta-row">
+        <a class="appstore" href="https://apps.apple.com/app/id6792562928" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.54c-.02-2.03 1.66-3 1.73-3.05-.94-1.38-2.41-1.57-2.93-1.59-1.25-.13-2.44.73-3.07.73-.63 0-1.61-.71-2.65-.69-1.36.02-2.62.79-3.32 2.01-1.42 2.46-.36 6.1 1.01 8.1.67.98 1.47 2.08 2.51 2.04 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.56.65 2.63.63 1.09-.02 1.78-1 2.44-1.98.77-1.13 1.09-2.23 1.11-2.29-.02-.01-2.13-.82-2.15-3.25zM15.1 6.4c.56-.68.94-1.62.83-2.56-.81.03-1.79.54-2.37 1.21-.52.6-.98 1.56-.86 2.48.9.07 1.83-.46 2.4-1.13z"/></svg>
+          <span><small>Download on the</small><span class="big">App Store</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Peace and quiet, built in</h2>
+        <p>A focused spam blocker that does one job well — and keeps your data to itself.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>On-device blocklist</h3>
+          <p>A curated list of known spam and scam numbers lives entirely on your iPhone. Blocking happens instantly — no server round-trips, no waiting.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
+          <h3>CallKit call blocking</h3>
+          <p>Nixring registers a Call Directory extension with iOS, so flagged spam calls are stopped by the system before your phone ever rings.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg></div>
+          <h3>SMS spam filtering</h3>
+          <p>Junk texts from unknown senders are routed straight to your Junk folder by the system Message Filter extension — quietly, without a notification.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3>Privacy-first, always</h3>
+          <p>No accounts. No tracking. No analytics. Your contacts, call history and messages are never collected, uploaded, or sold. Full stop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Up and running in a minute</h2>
+        <p>Turn on the extensions once in Settings and Nixring works silently in the background.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Install Nixring</h4>
+          <p>Download from the App Store and open the app once so iOS registers its blocking extensions.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Enable in Settings</h4>
+          <p>Go to Settings → Apps → Phone → Call Blocking &amp; Identification and switch on Nixring. Do the same under Messages for SMS filtering.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Enjoy the silence</h4>
+          <p>That's it. Known spam calls are blocked and junk texts are filtered automatically — nothing else to do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="banner">
+        <div class="big-emoji">🔒</div>
+        <h2>Your phone. Your data. Nobody else's.</h2>
+        <p>Nixring runs completely on-device. The blocklist never leaves your iPhone, and Nixring has no servers to send anything to. Privacy isn't a feature here — it's the whole design.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <a class="foot-brand" href="/"><img src="/logo-512.png" alt="Nixring logo">Nixring</a>
+      <nav class="foot-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/support.html">Support</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:levin.schwab@gmx.de">Contact</a>
+      </nav>
+    </div>
+    <div class="copy">© 2026 Levin Schwab. Nixring is not affiliated with Apple Inc. App Store is a trademark of Apple Inc.</div>
+  </div>
+</footer>
+</body>
+</html>

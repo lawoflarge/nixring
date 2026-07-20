@@ -4,7 +4,7 @@ import NixringCore
 /// Fetches the optional static remote blocklist (Pro auto-update). ETag-cached, times out
 /// fast, and fails silently offline — there is no backend and nothing is ever uploaded.
 enum RemoteBlocklist {
-    static let url = URL(string: "https://raw.githubusercontent.com/lawoflarge/nixring-blocklist/main/blocklist.json")!
+    static let url = URL(string: "https://nixring.vercel.app/blocklist.json")!
     private static let etagKey = "nixring.remoteBlocklist.etag"
 
     /// Returns fresh entries, or `nil` when unchanged (304) / offline / failed.
