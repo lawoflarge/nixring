@@ -1,0 +1,20 @@
+# Nixring: Spam Call Blocker
+
+> Nixring is a privacy-first iPhone app that blocks spam and scam phone calls using an on-device blocklist and Apple's Call Directory extension, and filters junk text messages into the Junk folder with a Message Filter extension. It runs entirely on device with no account, no server, and no tracking — nothing ever leaves your iPhone. Free to download, with an optional Nixring Pro subscription that adds junk-text filtering, an auto-updating blocklist, a whitelist, prefix rules, and unlimited blocked numbers.
+
+## App
+- [Download on the App Store](https://apps.apple.com/us/app/id6792562928): Free to download, iOS 17+, Utilities.
+- [Pricing](https://nixring.vercel.app/pricing.md): Free spam call blocking; optional Nixring Pro subscription ($4.99/week with a 3-day free trial, or $29.99/year).
+- [FAQ](https://nixring.vercel.app/#faq): Free blocker, how call blocking works, text filtering, privacy, cost, and setup.
+
+## How it works
+- Spam call blocking: Nixring registers a Call Directory extension so iOS rejects known spam and scam numbers before your phone rings. The built-in on-device blocklist and call blocking are free.
+- Junk text filtering (Nixring Pro): a Message Filter extension routes junk and scam texts from unknown senders into the Junk folder, quietly and without a notification.
+- Nixring Pro also adds an auto-updating spam blocklist, a whitelist for real callers, prefix and range rules, unlimited blocked numbers, and full protection stats.
+- Setup: open Nixring once, then enable it under Settings, Apps, Phone, Call Blocking and Identification; enable under Settings, Messages for junk-text filtering.
+
+## Privacy
+- 100% on device. No account, no server to send anything to.
+- Contacts, call history, and messages are never collected, uploaded, or sold. No tracking, no analytics.
+- [Privacy Policy](https://nixring.vercel.app/privacy.html)
+- Contact: levin.schwab@gmx.de
