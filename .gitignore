@@ -27,3 +27,4 @@ scratch/
 
 # local build state
 .nixring-ids.env
+.vercel
