@@ -1,17 +1,19 @@
 import Foundation
 import StoreKit
 import Observation
+import NixringCore
 
 /// Native StoreKit 2 subscription manager. No RevenueCat, no server — entitlement is read
 /// straight from `Transaction.currentEntitlements`. Owning either product grants Pro.
 @Observable
 @MainActor
 final class SubscriptionManager {
-    static let weeklyID = "com.levinschwab.nixring.weekly"
-    static let yearlyID = "com.levinschwab.nixring.yearly"
-    var productIDs: [String] { [Self.weeklyID, Self.yearlyID] }
+    nonisolated static let weeklyID = NixringProduct.weekly
+    nonisolated static let yearlyID = NixringProduct.yearly
+    var productIDs: [String] { NixringProduct.all }
 
     private(set) var products: [Product] = []
+    private(set) var phase: StoreLoadPhase = .idle
     private(set) var isPro = false
     var isPurchasing = false
     var errorMessage: String?
@@ -32,26 +34,41 @@ final class SubscriptionManager {
     var yearly: Product? { products.first { $0.id == Self.yearlyID } }
 
     func loadProducts() async {
+        if products.isEmpty { phase = .loading }
         do {
             let loaded = try await Product.products(for: productIDs)
             products = loaded.sorted { $0.price < $1.price }
+            phase = .loaded
         } catch {
-            errorMessage = "Couldn't load subscription options."
+            products = []
+            phase = .failed
         }
+    }
+
+    /// Paywall state derived from what the App Store actually returned.
+    func paywallState(preferred: String) -> PaywallState {
+        PaywallStateResolver.resolve(phase: phase,
+                                     loadedIDs: products.map(\.id),
+                                     preferred: preferred,
+                                     order: NixringProduct.displayOrder)
     }
 
     func purchase(_ product: Product) async {
         isPurchasing = true
+        errorMessage = nil
         defer { isPurchasing = false }
         do {
-            let result = try await product.purchase()
-            switch result {
+            switch try await product.purchase() {
             case .success(let verification):
                 if case .verified(let transaction) = verification {
                     await transaction.finish()
                     await refreshEntitlements()
+                } else {
+                    errorMessage = "That purchase couldn't be verified. Please try again."
                 }
-            case .userCancelled, .pending:
+            case .pending:
+                errorMessage = "Your purchase is waiting for approval."
+            case .userCancelled:
                 break
             @unknown default:
                 break
@@ -62,8 +79,16 @@ final class SubscriptionManager {
     }
 
     func restore() async {
-        try? await AppStore.sync()
-        await refreshEntitlements()
+        errorMessage = nil
+        do {
+            try await AppStore.sync()
+            await refreshEntitlements()
+            if !isPro { errorMessage = "No active Nixring Pro subscription on this Apple Account." }
+        } catch StoreKitError.userCancelled {
+            // Nothing to say — the user backed out of the App Store prompt.
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     func refreshEntitlements() async {
