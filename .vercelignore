@@ -1,0 +1,8 @@
+# Nur `web/` wird ausgeliefert. Vercel laedt sonst das GANZE Repository hoch,
+# also auch Quelltext, Archive und Build-Artefakte, die dort nichts zu suchen
+# haben. Zwei Gruende, warum das nicht harmlos ist: der Upload kann Geheimnisse
+# mitnehmen, und ab einigen zehntausend Dateien bricht der Deploy schlicht ab.
+*
+!web
+!web/**
+!vercel.json
