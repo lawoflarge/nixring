@@ -18,9 +18,19 @@ settings:
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     GENERATE_INFOPLIST_FILE: NO
 
+# Two packages, not one: the ads package pulls the consent package in itself,
+# but `import UserMessagingPlatform` needs the product as a target dependency.
+# Both belong to the app target only. Nothing advertising goes into the Call
+# Directory or the Message Filter extension.
 packages:
   NixringCore:
     path: Packages/NixringCore
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads
+    from: "13.0.0"
+  GoogleUserMessagingPlatform:
+    url: https://github.com/googleads/swift-package-manager-google-user-messaging-platform
+    from: "3.0.0"
 
 targets:
   Nixring:
@@ -46,6 +56,10 @@ targets:
       - package: NixringCore
       - target: NixringCallDirectory
       - target: NixringMessageFilter
+      - package: GoogleMobileAds
+        product: GoogleMobileAds
+      - package: GoogleUserMessagingPlatform
+        product: GoogleUserMessagingPlatform
 
   NixringCallDirectory:
     type: app-extension

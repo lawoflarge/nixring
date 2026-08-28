@@ -31,8 +31,10 @@ struct BlocklistView: View {
 
 private struct NumbersList: View {
     @Environment(AppModel.self) private var model
+    @Environment(AdsController.self) private var ads
     @State private var input = ""
     @State private var alertText: String?
+    @FocusState private var isTyping: Bool
 
     var body: some View {
         List {
@@ -40,6 +42,7 @@ private struct NumbersList: View {
                 HStack {
                     TextField("Add a number to block", text: $input)
                         .keyboardType(.phonePad)
+                        .focused($isTyping)
                         .foregroundStyle(Palette.textPrimary)
                     Button("Add") { add() }
                         .disabled(input.isEmpty)
@@ -67,6 +70,13 @@ private struct NumbersList: View {
             }
         }
         .scrollContentBackground(.hidden)
+        // An inset rather than a row: a row would be inside the list, where the
+        // swipe to delete runs, and a banner is the last thing a finger sliding
+        // across a number should meet. Hidden while the phone pad is open, so
+        // nothing sits next to the keys somebody is typing a number on.
+        .safeAreaInset(edge: .bottom) {
+            if !isTyping { AdBannerView(ads: ads) }
+        }
         .alert(alertText ?? "", isPresented: Binding(get: { alertText != nil }, set: { if !$0 { alertText = nil } })) {
             Button("OK", role: .cancel) {}
         }
@@ -74,7 +84,15 @@ private struct NumbersList: View {
 
     private func add() {
         switch model.addCustomNumber(input) {
-        case .ok: input = ""
+        case .ok:
+            input = ""
+            // The number is normalised, checked, stored and handed to the call
+            // directory extension. That is the completed action of this screen,
+            // and the moment right after it is its only pause. The keyboard goes
+            // first, so a full screen ad never lands on an open phone pad.
+            isTyping = false
+            ads.recordAction()
+            ads.presentInterstitialIfAllowed()
         case .invalid: alertText = "That doesn't look like a valid phone number."
         case .duplicate: alertText = "That number is already on your list."; input = ""
         case .needsPro: model.showPaywall = true

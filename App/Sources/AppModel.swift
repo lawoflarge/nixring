@@ -37,6 +37,19 @@ final class AppModel {
         return subs.isPro
     }
 
+    /// `isPro`, but nil until the first entitlement check has answered.
+    ///
+    /// Only the advertising asks for this. Everything else may read `isPro` and
+    /// see a subscriber as free for a moment, because it only unlocks a feature
+    /// slightly late. Advertising is the other way round: it would show a
+    /// consent form and a banner to somebody who has already paid.
+    var isProIfKnown: Bool? {
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["NIXRING_PRO"] == "1" { return true }
+        #endif
+        return subs.hasLoaded ? subs.isPro : nil
+    }
+
     /// Initial tab (screenshot automation only; 0 in release).
     var initialTab: Int {
         #if DEBUG

@@ -71,6 +71,11 @@ struct PaywallView: View {
             feature("slider.horizontal.3", "Prefix & range rules")
             feature("checkmark.seal.fill", "Whitelist real callers")
             feature("chart.bar.fill", "Full protection stats")
+            feature("rectangle.slash", "No advertising")
+            Text("The free version carries a banner on the shield, blocklist and settings screens, and one full screen ad after a number has been added. Never over the keypad. Pro removes all of it.")
+                .font(.footnote).foregroundStyle(Palette.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.top, 2)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

@@ -3,6 +3,7 @@ import NixringCore
 
 struct SettingsView: View {
     @Environment(AppModel.self) private var model
+    @Environment(AdsController.self) private var ads
 
     var body: some View {
         NavigationStack {
@@ -42,6 +43,21 @@ struct SettingsView: View {
                     Link(destination: AppLinks.privacy) { linkRow("Privacy Policy", "hand.raised.fill") }
                     Link(destination: AppLinks.terms) { linkRow("Terms of Use (EULA)", "doc.text.fill") }
                     Link(destination: AppLinks.support) { linkRow("Support", "questionmark.circle.fill") }
+                    // Only where consent was asked for, which is what the consent
+                    // SDK reports, and only in answer to a tap, which is what it
+                    // requires. The answer has to stay changeable.
+                    if ads.isPrivacyOptionsRequired {
+                        Button {
+                            Task { await ads.showPrivacyOptionsForm() }
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "slider.horizontal.3")
+                                    .foregroundStyle(Palette.accent).frame(width: 24)
+                                Text("Advertising privacy choices").foregroundStyle(Palette.textPrimary)
+                                Spacer()
+                            }
+                        }
+                    }
                 }
                 .listRowBackground(Palette.surface)
 
@@ -62,6 +78,9 @@ struct SettingsView: View {
             }
             .scrollContentBackground(.hidden)
             .background(Palette.bg.ignoresSafeArea())
+            // Switches and links, nothing that could be interrupted. As an
+            // inset, so the last row stays reachable.
+            .safeAreaInset(edge: .bottom) { AdBannerView(ads: ads) }
             .tint(Palette.accent)
             .navigationTitle("Settings")
         }

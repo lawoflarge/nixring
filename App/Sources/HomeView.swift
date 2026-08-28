@@ -3,6 +3,7 @@ import NixringCore
 
 struct HomeView: View {
     @Environment(AppModel.self) private var model
+    @Environment(AdsController.self) private var ads
 
     var body: some View {
         NavigationStack {
@@ -22,6 +23,9 @@ struct HomeView: View {
                 .padding(20)
             }
             .nixringBackground()
+            // Under the cards, never over them. As an inset, so the last card
+            // stays reachable instead of ending up behind the banner.
+            .safeAreaInset(edge: .bottom) { AdBannerView(ads: ads) }
             .navigationTitle("Nixring")
             .toolbar {
                 if model.isPro { ToolbarItem(placement: .topBarTrailing) { ProBadge() } }
@@ -84,7 +88,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Label("100% on-device", systemImage: "lock.shield.fill")
                     .font(.headline).foregroundStyle(Palette.accent)
-                Text("Your contacts and blocklist never leave your iPhone. Nixring has no account, no server, and collects no data.")
+                Text("Your contacts and blocklist never leave your iPhone. Nixring has no account and no server of its own. The free version loads advertising from Google, Pro loads none.")
                     .font(.subheadline).foregroundStyle(Palette.textSecondary)
             }
         }
@@ -98,7 +102,7 @@ struct HomeView: View {
                         Text("Unlock Nixring Pro").font(.headline).foregroundStyle(Palette.textPrimary)
                         Spacer(); ProBadge()
                     }
-                    Text("Unlimited numbers, junk-text filtering, auto-updating blocklist, prefix rules, whitelist, and full stats.")
+                    Text("Unlimited numbers, junk-text filtering, auto-updating blocklist, prefix rules, whitelist, full stats, and no advertising.")
                         .font(.subheadline).foregroundStyle(Palette.textSecondary)
                     Text("Try 3 days free →")
                         .font(.subheadline.weight(.semibold)).foregroundStyle(Palette.accent).padding(.top, 2)
