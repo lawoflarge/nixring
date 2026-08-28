@@ -10,7 +10,7 @@ import Foundation
 /// into a Call Directory or a Message Filter extension.
 extension AdConfiguration {
     static let nixring = AdConfiguration.app(
-        applicationID: "__ADMOB_APP_ID__",
-        bannerUnitID: "__ADMOB_BANNER_UNIT__",
-        interstitialUnitID: "__ADMOB_INTERSTITIAL_UNIT__")
+        applicationID: "ca-app-pub-6563643868702361~5471753832",
+        bannerUnitID: "ca-app-pub-6563643868702361/6214929219",
+        interstitialUnitID: "ca-app-pub-6563643868702361/6167661909")
 }
