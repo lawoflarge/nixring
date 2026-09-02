@@ -1,7 +1,7 @@
 {
   "name": "Nixring: Spam Call Blocker",
   "short_name": "Nixring",
-  "description": "Nixring is the privacy-first way to stop spam calls and scam texts on your iPhone, and it does it all on your device.  NOTHING LEAVES YOUR PHONE Your contacts and blocklist are nev",
+  "description": "Nixring is the privacy-first way to stop spam calls and scam texts on your iPhone, and it does it all on your device.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B0B0F",
