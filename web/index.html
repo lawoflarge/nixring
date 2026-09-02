@@ -2,146 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nixring — Spam Call & Text Blocker for iPhone</title>
-<meta name="description" content="Block spam calls and texts on your iPhone. 100% on-device, privacy-first. Nothing is ever uploaded. Nixring is a CallKit spam blocker with an on-device blocklist.">
-
-<meta property="og:title" content="Nixring — Spam Call & Text Blocker">
-<meta property="og:description" content="Block spam calls & texts. 100% on-device. Nothing uploaded.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spam Call Blocker for iPhone, On Device | Nixring</title>
+<meta name="description" content="Nixring blocks spam calls and junk texts on iPhone from a list held on the phone. No account, no contacts upload, no call history. Free to download, iOS 17 or later.">
+<meta property="og:title" content="Spam Call Blocker for iPhone, On Device | Nixring">
+<meta property="og:description" content="Nixring blocks spam calls and junk texts on iPhone from a list held on the phone. No account, no contacts upload, no call history. Free to download, iOS 17 or later.">
+<link rel="stylesheet" href="/aso-tokens.css">
+<link rel="stylesheet" href="/aso-site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is there a free spam call blocker for iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nixring is a free-to-download iPhone app that blocks spam and scam calls using a built-in, on-device blocklist of known bad numbers. Spam call blocking is free to use. An optional Nixring Pro subscription adds junk-text filtering, an auto-updating blocklist, a whitelist, and unlimited blocked numbers." } },
-    { "@type": "Question", "name": "How does Nixring block spam calls?", "acceptedAnswer": { "@type": "Answer", "text": "Nixring registers a Call Directory extension with iOS and hands the system a list of known spam and scam numbers to reject. Flagged calls are stopped by iOS before your phone ever rings, so you are never interrupted. All matching happens on device, with no server lookups and nothing uploaded." } },
-    { "@type": "Question", "name": "Does Nixring block spam text messages too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with Nixring Pro. Nixring includes a Message Filter extension that routes junk and scam texts from unknown senders straight to your Junk folder, quietly and without a notification. Junk-text filtering is part of the optional Nixring Pro subscription, while spam call blocking with the built-in blocklist stays free." } },
-    { "@type": "Question", "name": "Is Nixring private? Does it upload my contacts or call history?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nixring runs completely on device and has no servers to send anything to. Your contacts, call history, and messages are never collected, uploaded, or sold. There is no account, no tracking, and no analytics. The spam blocklist lives on your iPhone and never leaves it." } },
-    { "@type": "Question", "name": "How much does Nixring cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nixring is free to download and free to use for spam call blocking with the built-in blocklist. Nixring Pro is an optional subscription that unlocks junk-text filtering, an auto-updating blocklist, a whitelist, prefix rules, and unlimited numbers. Pro costs $4.99 per week with a 3-day free trial, or $29.99 per year." } },
-    { "@type": "Question", "name": "How do I turn on Nixring after installing it?", "acceptedAnswer": { "@type": "Answer", "text": "Open Nixring once so iOS registers its extensions, then go to Settings, Apps, Phone, Call Blocking and Identification, and switch on Nixring. For junk-text filtering, enable Nixring under Settings, Messages. After that, Nixring blocks known spam automatically in the background, with nothing else for you to do." } }
+    {
+      "@type": "Question",
+      "name": "How many numbers does the built-in blocklist contain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exactly 80. The file that ships inside the app holds 80 entries: 20 German premium-rate numbers, 15 shared-cost numbers, 15 televoting numbers and 30 international callback-bait prefixes. That is a starter list, not a database of millions. Most of the protection you end up with comes from the numbers you add yourself and, with Nixring Pro, from the list update."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Nixring block every spam call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and no list-based blocker can. Apple only lets a third-party app hand iOS a list of numbers in advance. If a caller uses a number that is not on your list, it rings. Spam operators rotate numbers constantly, so a brand new number gets through until the list catches up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Nixring see who is calling me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. That is the point. iOS asks the Call Directory extension for a list of numbers and then does the blocking itself. The extension is never told that a call came in, who called, or whether anything was blocked. Nixring cannot build a call history because it is never handed one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Nixring upload my contacts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Nixring never asks for access to your contacts, and the app contains no code that reads the address book. There is no account and no server that receives your data. With Nixring Pro the app downloads one public JSON file to refresh the list, and that request sends nothing about you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is spam call blocking free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The built-in list of 80 numbers works in the free version, and you can add up to 10 numbers of your own. The free version shows advertising from Google. Junk text filtering, unlimited numbers, the whitelist, prefix rules and the auto-updating list are part of Nixring Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Nixring Pro cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4.99 US dollars per week or 29.99 US dollars per year. The App Store shows the equivalent in your local currency. Both plans renew until you cancel them in App Store settings, and both unlock the same features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the app not show a count of blocked calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because iOS does not report one. The Call Directory API gives an app no callback when a call is rejected, so a real blocked-calls counter is impossible to build honestly. Nixring shows how many numbers are currently shielding you, plus a genuine count of texts the filter moved to Junk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I switch Nixring on after installing it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the app once so iOS registers its extensions. Then go to Settings, Apps, Phone, Call Blocking and Identification, and switch on Nixring. For junk texts, go to Settings, Messages, Unknown and Spam, SMS Filtering, and switch on Nixring."
+      }
+    }
   ]
 }
 </script>
-<style>
-  :root{
-    --bg:#060d1a; --bg-2:#0a1424; --surface:rgba(255,255,255,.045);
-    --surface-solid:#0e1a2e; --border:rgba(255,255,255,.09);
-    --text:#e9f0fa; --muted:#9db0cb; --accent:#38bdf8; --accent-2:#3b82f6;
-    --shadow:0 24px 60px -20px rgba(0,0,0,.65); --radius:20px;
-  }
-  @media (prefers-color-scheme: light){
-    :root{
-      --bg:#eef4fb; --bg-2:#ffffff; --surface:#ffffff; --surface-solid:#ffffff;
-      --border:rgba(10,30,60,.10); --text:#0b1b33; --muted:#4d6180;
-      --accent:#0284c7; --accent-2:#2563eb; --shadow:0 20px 45px -22px rgba(15,40,80,.28);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#060d1a; --bg-2:#0a1424; --surface:rgba(255,255,255,.045);
-    --surface-solid:#0e1a2e; --border:rgba(255,255,255,.09);
-    --text:#e9f0fa; --muted:#9db0cb; --accent:#38bdf8; --accent-2:#3b82f6;
-    --shadow:0 24px 60px -20px rgba(0,0,0,.65);
-  }
-  :root[data-theme="light"]{
-    --bg:#eef4fb; --bg-2:#ffffff; --surface:#ffffff; --surface-solid:#ffffff;
-    --border:rgba(10,30,60,.10); --text:#0b1b33; --muted:#4d6180;
-    --accent:#0284c7; --accent-2:#2563eb; --shadow:0 20px 45px -22px rgba(15,40,80,.28);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg); color:var(--text); line-height:1.6;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  /* nav */
-  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
-    background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--border)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.02em}
-  .brand img{width:34px;height:34px;border-radius:9px}
-  .nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted);font-weight:500}
-  .nav-links a:hover{color:var(--text)}
-  @media(max-width:600px){.nav-links{display:none}}
-  /* hero */
-  .hero{position:relative;text-align:center;padding:84px 0 72px;overflow:hidden}
-  .hero::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);
-    width:760px;height:760px;border-radius:50%;
-    background:radial-gradient(circle,rgba(56,189,248,.22),transparent 62%);
-    filter:blur(20px);z-index:0;pointer-events:none}
-  .hero-logo{width:118px;height:118px;border-radius:27px;position:relative;z-index:1;
-    box-shadow:var(--shadow);margin-bottom:26px}
-  .hero h1{position:relative;z-index:1;font-size:clamp(34px,6vw,56px);line-height:1.05;
-    letter-spacing:-.035em;font-weight:800;margin-bottom:18px}
-  .grad{background:linear-gradient(120deg,var(--accent),var(--accent-2));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p.lead{position:relative;z-index:1;font-size:clamp(17px,2.4vw,21px);color:var(--muted);
-    max-width:560px;margin:0 auto 34px}
-  .cta-row{position:relative;z-index:1;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
-  .appstore{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(120deg,var(--accent),var(--accent-2));
-    color:#fff;padding:14px 24px;border-radius:15px;font-weight:600;font-size:16px;
-    box-shadow:0 14px 30px -10px rgba(56,130,246,.55);transition:transform .15s ease,box-shadow .15s ease}
-  .appstore:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(56,130,246,.7)}
-  .appstore svg{width:26px;height:26px}
-  .appstore small{display:block;font-size:11px;font-weight:500;opacity:.85;line-height:1.1}
-  .appstore .big{font-size:19px;font-weight:700;line-height:1.1}
-  .pill{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;
-    font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:100px;
-    padding:7px 15px;margin-bottom:26px;background:var(--surface);font-weight:500}
-  .pill .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-  /* section */
-  section{padding:60px 0}
-  .sec-head{text-align:center;max-width:620px;margin:0 auto 46px}
-  .sec-head h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.03em;font-weight:800;margin-bottom:12px}
-  .sec-head p{color:var(--muted);font-size:17px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  @media(max-width:680px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-    padding:30px 28px;transition:transform .18s ease,border-color .18s ease}
-  .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
-  .ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(59,130,246,.14));
-    border:1px solid var(--border);margin-bottom:18px}
-  .ico svg{width:27px;height:27px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .card h3{font-size:19px;letter-spacing:-.02em;margin-bottom:9px;font-weight:700}
-  .card p{color:var(--muted);font-size:15.5px}
-  /* steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
-  @media(max-width:680px){.steps{grid-template-columns:1fr}}
-  .step{position:relative;background:var(--surface);border:1px solid var(--border);
-    border-radius:var(--radius);padding:28px 24px 26px}
-  .step .num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-    font-weight:800;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));margin-bottom:16px;font-size:16px}
-  .step h4{font-size:17px;margin-bottom:7px;letter-spacing:-.01em}
-  .step p{color:var(--muted);font-size:15px}
-  /* privacy banner */
-  .banner{background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(59,130,246,.10));
-    border:1px solid var(--border);border-radius:24px;padding:44px 40px;text-align:center}
-  .banner h2{font-size:clamp(24px,3.6vw,32px);letter-spacing:-.03em;margin-bottom:14px;font-weight:800}
-  .banner p{color:var(--muted);font-size:17px;max-width:600px;margin:0 auto}
-  .banner .big-emoji{font-size:40px;margin-bottom:8px}
-  /* footer */
-  footer{border-top:1px solid var(--border);margin-top:40px;padding:42px 0 54px}
-  .foot-inner{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
-  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:700}
-  .foot-brand img{width:30px;height:30px;border-radius:8px}
-  .foot-links{display:flex;gap:24px;font-size:15px;color:var(--muted);flex-wrap:wrap}
-  .foot-links a:hover{color:var(--text)}
-  .copy{color:var(--muted);font-size:14px;margin-top:22px;text-align:center;width:100%}
-  /* geo definition */
-  .geo-def{position:relative;z-index:1;max-width:600px;margin:30px auto 0;padding:18px 22px;
-    background:var(--surface);border:1px solid var(--border);border-radius:16px;
-    color:var(--muted);font-size:15.5px;line-height:1.6;text-align:left}
-  .geo-def b{color:var(--text);font-weight:700}
-  /* faq */
-  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px}
-  .faq-item h3{font-size:17px;letter-spacing:-.01em;margin-bottom:8px;font-weight:700}
-  .faq-item p{color:var(--muted);font-size:15.5px}
-</style>
 <!-- aso:head:start -->
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -201,154 +140,300 @@
 }
 </script>
 <!-- aso:head:end -->
+
 </head>
 <body>
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="/"><img src="/logo-512.png" alt="Nixring logo">Nixring</a>
-    <nav class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
     <div class="wrap">
-      <span class="pill"><span class="dot"></span>100% on-device · nothing uploaded</span>
-      <br>
-      <img class="hero-logo" src="/logo-512.png" alt="Nixring app icon">
-      <h1>Block spam calls<br>& texts. <span class="grad">On your terms.</span></h1>
-      <p class="lead">Nixring silences unwanted callers and junk texts on your iPhone using an on-device blocklist. Private by design — your numbers never leave your phone.</p>
-      <div class="cta-row">
-        <a class="appstore" href="https://apps.apple.com/us/app/id6792562928" aria-label="Download on the App Store">
-          <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.54c-.02-2.03 1.66-3 1.73-3.05-.94-1.38-2.41-1.57-2.93-1.59-1.25-.13-2.44.73-3.07.73-.63 0-1.61-.71-2.65-.69-1.36.02-2.62.79-3.32 2.01-1.42 2.46-.36 6.1 1.01 8.1.67.98 1.47 2.08 2.51 2.04 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.56.65 2.63.63 1.09-.02 1.78-1 2.44-1.98.77-1.13 1.09-2.23 1.11-2.29-.02-.01-2.13-.82-2.15-3.25zM15.1 6.4c.56-.68.94-1.62.83-2.56-.81.03-1.79.54-2.37 1.21-.52.6-.98 1.56-.86 2.48.9.07 1.83-.46 2.4-1.13z"/></svg>
-          <span><small>Download on the</small><span class="big">App Store</span></span>
-        </a>
-      </div>
-      <p class="geo-def" data-geo-definition><b>Nixring is a privacy-first iPhone app</b> that blocks spam and scam phone calls using an on-device blocklist and Apple's Call Directory, and filters junk texts into your Junk folder. It runs entirely on your iPhone — no account, no tracking, nothing uploaded. Free to download, with an optional Nixring Pro subscription.</p>
-    </div>
-  </section>
-
-  <section id="features">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Peace and quiet, built in</h2>
-        <p>A focused spam blocker that does one job well — and keeps your data to itself.</p>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>On-device blocklist</h3>
-          <p>A curated list of known spam and scam numbers lives entirely on your iPhone. Blocking happens instantly — no server round-trips, no waiting.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
-          <h3>CallKit call blocking</h3>
-          <p>Nixring registers a Call Directory extension with iOS, so flagged spam calls are stopped by the system before your phone ever rings.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg></div>
-          <h3>SMS spam filtering</h3>
-          <p>Junk texts from unknown senders are routed straight to your Junk folder by the system Message Filter extension — quietly, without a notification.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <h3>Privacy-first, always</h3>
-          <p>No accounts. No tracking. No analytics. Your contacts, call history and messages are never collected, uploaded, or sold. Full stop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Up and running in a minute</h2>
-        <p>Turn on the extensions once in Settings and Nixring works silently in the background.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <h4>Install Nixring</h4>
-          <p>Download from the App Store and open the app once so iOS registers its blocking extensions.</p>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <h4>Enable in Settings</h4>
-          <p>Go to Settings → Apps → Phone → Call Blocking &amp; Identification and switch on Nixring. Do the same under Messages for SMS filtering.</p>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <h4>Enjoy the silence</h4>
-          <p>That's it. Known spam calls are blocked and junk texts are filtered automatically — nothing else to do.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Frequently asked questions</h2>
-        <p>Everything you might ask an assistant about blocking spam calls and texts on iPhone.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Is there a free spam call blocker for iPhone?</h3>
-          <p>Yes. Nixring is a free-to-download iPhone app that blocks spam and scam calls using a built-in, on-device blocklist of known bad numbers. Spam call blocking is free to use. An optional Nixring Pro subscription adds junk-text filtering, an auto-updating blocklist, a whitelist, and unlimited blocked numbers.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How does Nixring block spam calls?</h3>
-          <p>Nixring registers a Call Directory extension with iOS and hands the system a list of known spam and scam numbers to reject. Flagged calls are stopped by iOS before your phone ever rings, so you are never interrupted. All matching happens on device, with no server lookups and nothing uploaded.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Does Nixring block spam text messages too?</h3>
-          <p>Yes, with Nixring Pro. Nixring includes a Message Filter extension that routes junk and scam texts from unknown senders straight to your Junk folder, quietly and without a notification. Junk-text filtering is part of the optional Nixring Pro subscription, while spam call blocking with the built-in blocklist stays free.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is Nixring private? Does it upload my contacts or call history?</h3>
-          <p>No. Nixring runs completely on device and has no servers to send anything to. Your contacts, call history, and messages are never collected, uploaded, or sold. There is no account, no tracking, and no analytics. The spam blocklist lives on your iPhone and never leaves it.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How much does Nixring cost?</h3>
-          <p>Nixring is free to download and free to use for spam call blocking with the built-in blocklist. Nixring Pro is an optional subscription that unlocks junk-text filtering, an auto-updating blocklist, a whitelist, prefix rules, and unlimited numbers. Pro costs $4.99 per week with a 3-day free trial, or $29.99 per year.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How do I turn on Nixring after installing it?</h3>
-          <p>Open Nixring once so iOS registers its extensions, then go to Settings, Apps, Phone, Call Blocking and Identification, and switch on Nixring. For junk-text filtering, enable Nixring under Settings, Messages. After that, Nixring blocks known spam automatically in the background, with nothing else for you to do.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="banner">
-        <div class="big-emoji">🔒</div>
-        <h2>Your phone. Your data. Nobody else's.</h2>
-        <p>Nixring runs completely on-device. The blocklist never leaves your iPhone, and Nixring has no servers to send anything to. Privacy isn't a feature here — it's the whole design.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-inner">
-      <a class="foot-brand" href="/"><img src="/logo-512.png" alt="Nixring logo">Nixring</a>
-      <nav class="foot-links">
-        <a href="/privacy.html">Privacy Policy</a>
+      <a class="mark" href="/"><img src="/favicon-48.png" alt="Nixring app icon" width="28" height="28">Nixring</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="/free-spam-call-blocker-iphone.html">Free tier</a>
+        <a href="/block-spam-texts-iphone.html">Spam texts</a>
+        <a href="/truecaller-alternative-iphone.html">Comparisons</a>
         <a href="/support.html">Support</a>
-        <a href="/terms.html">Terms</a>
-        <a href="mailto:levin.schwab@gmx.de">Contact</a>
       </nav>
     </div>
-    <div class="copy">© 2026 Levin Schwab. Nixring is not affiliated with Apple Inc. App Store is a trademark of Apple Inc.<br>Last updated: 2026-07-23</div>
-  </div>
-</footer>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Spam call blocker for iPhone that <span class="hl">never sees your calls</span></h1>
+        <p class="lede">Nixring hands iOS a list of spam numbers and steps out of the way. No account, no contacts upload, no server that receives your call history, because there is no server at all.</p>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="hero" href="https://apps.apple.com/app/id6792562928?ct=hero&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Free to download. iOS 17.0 or later. Rated 5.0 out of 5 from 2 App Store ratings.</p>
+      </div>
+        <dl class="facts">
+          <div><dt>Price</dt><dd>Free, Pro from 4.99 USD</dd></div>
+          <div><dt>Built-in list</dt><dd>80 numbers</dd></div>
+          <div><dt>Account required</dt><dd>None</dd></div>
+          <div><dt>App Store rating</dt><dd>5.0 from 2 ratings</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Inside the app</p>
+        <h2>What you actually get</h2>
+        <div class="shots">
+        <figure><img src="/shots/01.webp" width="221" height="480" loading="lazy" alt="Nixring home screen with a protection shield, the number of spam numbers currently shielding the phone, and switches for call blocking and the junk text filter."><figcaption>The shield screen counts the numbers on the list, not the calls. iOS never tells an app that a call was blocked.</figcaption></figure>
+        <figure><img src="/shots/02.webp" width="221" height="480" loading="lazy" alt="Nixring setup screen stating that contacts and the blocklist never leave the phone, with no account and no servers."><figcaption>Setup states the deal plainly. There is no account step because there is no account.</figcaption></figure>
+        <figure><img src="/shots/03.webp" width="221" height="480" loading="lazy" alt="The Nixring Pro screen listing unlimited blocked numbers, junk text filtering, an auto-updating blocklist, prefix rules, a whitelist and full stats, with a weekly and a yearly plan."><figcaption>Everything behind the paywall in one screen, with both prices side by side.</figcaption></figure>
+        <figure><img src="/shots/04.webp" width="221" height="480" loading="lazy" alt="The Nixring blocklist screen with tabs for numbers, whitelist and rules, showing three phone numbers added by hand."><figcaption>Your own numbers, a whitelist that outranks everything, and prefix rules in one place.</figcaption></figure>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">The honest number</p>
+        <h2>The built-in list holds 80 numbers</h2>
+        <p>Every spam blocker on the App Store claims a database. Here is the exact contents of the file that ships inside Nixring, counted from the source rather than rounded up for a marketing page.</p>
+        <ul class="ledger">
+        <li><span class="num">+49 900</span><span class="qty">20</span><span class="what">German premium rate numbers, labelled as premium-rate spam</span></li>
+        <li><span class="num">+49 180</span><span class="qty">15</span><span class="what">German shared cost numbers, labelled as shared-cost spam</span></li>
+        <li><span class="num">+49 137</span><span class="qty">15</span><span class="what">German televoting numbers, labelled as televoting spam</span></li>
+        <li><span class="num">10 codes</span><span class="qty">30</span><span class="what">Callback bait prefixes in +216, +223, +225, +233, +234, +252, +371, +373, +679 and +881, three per code</span></li>
+        <li class="total"><span class="num">Total</span><span class="qty">80</span><span class="what">numbers in the list every install starts with</span></li>
+      </ul>
+        <div class="note limit">
+          <p><strong>Read that as a starting point, not a shield.</strong> Eighty numbers will not stop a determined operator, and the German ranges will do nothing for a caller in another country. The list matters most for the ranges that never change: premium-rate numbers and callback bait. Everything beyond that comes from the numbers you add, the prefix rules you write, and the list update in Nixring Pro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Features</p>
+        <h2>Five things it does</h2>
+        <div class="rows">
+          <div class="row">
+            <h3>Blocking through Apple's Call Directory</h3>
+            <p>Nixring gives iOS a sorted list of numbers to reject. iOS does the rejecting, before the phone rings and before any app is involved. Nothing runs in the background and nothing drains the battery.</p>
+          </div>
+          <div class="row">
+            <h3>Your own numbers and a whitelist<span class="tag">Free up to 10</span></h3>
+            <p>Add any number by hand. A whitelist entry outranks every list and every rule, so a number you trust is never blocked by anything Nixring builds. The free version honours the first 10 numbers you add; Nixring Pro removes the limit.</p>
+          </div>
+          <div class="row">
+            <h3>Junk and scam text filtering<span class="tag pro">Pro</span></h3>
+            <p>A Message Filter extension checks texts from senders you have never written to and moves the bad ones to the Junk folder without a notification. It matches 28 scam phrases, 16 suspect domain endings and 10 link shorteners, all offline. Message content is never stored or sent.</p>
+          </div>
+          <div class="row">
+            <h3>Prefix and range rules<span class="tag pro">Pro</span></h3>
+            <p>Block a whole block of numbers at once, for example everything starting <code>+49 900</code>. A rule takes a prefix and 1 to 5 trailing digits, which covers 10 to 100,000 numbers in one entry.</p>
+          </div>
+          <div class="row">
+            <h3>List updates<span class="tag pro">Pro</span></h3>
+            <p>Pro refreshes the list from one public file at <code>nixring.vercel.app/blocklist.json</code>. The request carries no identifier, uses a cache tag so an unchanged file costs nothing, and fails quietly when you are offline.</p>
+          </div>
+        </div>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="features" href="https://apps.apple.com/app/id6792562928?ct=features&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Call blocking with the built-in list is free. Pro is optional.</p>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Why privacy is structural here</p>
+        <h2>The extension is never told about a call</h2>
+        <p>A caller ID app has to send every incoming number somewhere to look it up. That is how it names an unknown caller, and it is also why it needs your data. Nixring works the opposite way around.</p>
+        <ol class="steps">
+          <li>
+            <h3>iOS asks for a list</h3>
+            <p>When you switch Nixring on, or when the app asks for a reload, iOS starts the Call Directory extension and requests the full set of numbers.</p>
+          </li>
+          <li>
+            <h3>The extension answers and exits</h3>
+            <p>It reads the numbers from a file on your phone, hands them over in the order iOS requires, and stops. It makes no network request while it does this.</p>
+          </li>
+          <li>
+            <h3>iOS blocks on its own</h3>
+            <p>From then on iOS matches incoming calls against that list. The extension is not started again, is not told who called, and is not told what was rejected. There is nothing for Nixring to collect, because nothing is ever handed to it.</p>
+          </li>
+        </ol>
+        <p>The same design keeps the app modest. Nixring cannot tell you the name of an unknown caller, and it cannot flag a number nobody has reported yet. If that is what you need, a lookup service is the better tool, and <a href="/truecaller-alternative-iphone.html">the comparison page</a> says so plainly.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Setup</p>
+        <h2>Two switches in Settings</h2>
+        <ol class="steps">
+          <li>
+            <h3>Open Nixring once</h3>
+            <p>The first launch registers both extensions with iOS. Until you do this, the switches below will not appear.</p>
+          </li>
+          <li>
+            <h3>Settings, Apps, Phone, Call Blocking and Identification</h3>
+            <p>Switch on Nixring. Call blocking starts immediately and keeps working whether or not the app is open.</p>
+          </li>
+          <li>
+            <h3>Settings, Messages, Unknown and Spam, SMS Filtering</h3>
+            <p>Switch on Nixring for junk text filtering. This step needs Nixring Pro, because the filter itself is a Pro feature.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Limits</p>
+        <h2>What Nixring cannot do</h2>
+        <ul class="checks minus">
+          <li>It cannot name an unknown caller. There is no lookup and no directory of names.</li>
+          <li>It cannot answer a call, record one, or waste a scammer's time. iOS gives no third-party app that power.</li>
+          <li>It cannot count blocked calls, because iOS reports none back.</li>
+          <li>It cannot block a number that is not on your list or inside one of your rules.</li>
+          <li>It cannot filter texts from people already in your Messages history, because iOS only routes unknown senders to a filter extension.</li>
+        </ul>
+        <p>Everything above is a limit of the iOS APIs, not a feature waiting in a later release. Any app promising otherwise on iPhone is describing something else.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Price</p>
+        <h2>Free to use, Pro if you want the rest</h2>
+        <div class="tablewrap">
+          <table>
+            <caption>Prices in US dollars, taken from the App Store product records. Local currency is shown at checkout.</caption>
+            <thead><tr><th scope="col">&nbsp;</th><th scope="col">Free</th><th scope="col">Nixring Pro</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Built-in list of 80 numbers</th><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+              <tr><th scope="row">Numbers you add yourself</th><td>First 10</td><td class="yes">Unlimited</td></tr>
+              <tr><th scope="row">Junk and scam text filter</th><td class="no">No</td><td class="yes">Yes</td></tr>
+              <tr><th scope="row">Whitelist</th><td class="no">No</td><td class="yes">Yes</td></tr>
+              <tr><th scope="row">Prefix and range rules</th><td class="no">No</td><td class="yes">Yes</td></tr>
+              <tr><th scope="row">List updates</th><td class="no">No</td><td class="yes">Yes</td></tr>
+              <tr><th scope="row">Advertising</th><td>Google ads</td><td class="yes">None</td></tr>
+              <tr><th scope="row">Price</th><td>0.00 USD</td><td>4.99 USD per week or 29.99 USD per year</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Both plans unlock the same features and renew until you cancel them in App Store settings. There are no separate add-ons to buy.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+        <div class="faq">
+        <div>
+          <h3>How many numbers does the built-in blocklist contain?</h3>
+          <p>Exactly 80. The file that ships inside the app holds 80 entries: 20 German premium-rate numbers, 15 shared-cost numbers, 15 televoting numbers and 30 international callback-bait prefixes. That is a starter list, not a database of millions. Most of the protection you end up with comes from the numbers you add yourself and, with Nixring Pro, from the list update.</p>
+        </div>
+        <div>
+          <h3>Does Nixring block every spam call?</h3>
+          <p>No, and no list-based blocker can. Apple only lets a third-party app hand iOS a list of numbers in advance. If a caller uses a number that is not on your list, it rings. Spam operators rotate numbers constantly, so a brand new number gets through until the list catches up.</p>
+        </div>
+        <div>
+          <h3>Can Nixring see who is calling me?</h3>
+          <p>No. That is the point. iOS asks the Call Directory extension for a list of numbers and then does the blocking itself. The extension is never told that a call came in, who called, or whether anything was blocked. Nixring cannot build a call history because it is never handed one.</p>
+        </div>
+        <div>
+          <h3>Does Nixring upload my contacts?</h3>
+          <p>No. Nixring never asks for access to your contacts, and the app contains no code that reads the address book. There is no account and no server that receives your data. With Nixring Pro the app downloads one public JSON file to refresh the list, and that request sends nothing about you.</p>
+        </div>
+        <div>
+          <h3>Is spam call blocking free?</h3>
+          <p>Yes. The built-in list of 80 numbers works in the free version, and you can add up to 10 numbers of your own. The free version shows advertising from Google. Junk text filtering, unlimited numbers, the whitelist, prefix rules and the auto-updating list are part of Nixring Pro.</p>
+        </div>
+        <div>
+          <h3>How much does Nixring Pro cost?</h3>
+          <p>4.99 US dollars per week or 29.99 US dollars per year. The App Store shows the equivalent in your local currency. Both plans renew until you cancel them in App Store settings, and both unlock the same features.</p>
+        </div>
+        <div>
+          <h3>Why does the app not show a count of blocked calls?</h3>
+          <p>Because iOS does not report one. The Call Directory API gives an app no callback when a call is rejected, so a real blocked-calls counter is impossible to build honestly. Nixring shows how many numbers are currently shielding you, plus a genuine count of texts the filter moved to Junk.</p>
+        </div>
+        <div>
+          <h3>How do I switch Nixring on after installing it?</h3>
+          <p>Open the app once so iOS registers its extensions. Then go to Settings, Apps, Phone, Call Blocking and Identification, and switch on Nixring. For junk texts, go to Settings, Messages, Unknown and Spam, SMS Filtering, and switch on Nixring.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Start with the free version</h2>
+          <p>Call blocking with the built-in list costs nothing and takes a minute to switch on. Decide about Pro afterwards.</p>
+          <div class="cta">
+        <a class="aso-badge" data-aso-cta="faq" href="https://apps.apple.com/app/id6792562928?ct=faq&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Free download. iOS 17.0 or later. Rated 5.0 out of 5 from 2 App Store ratings.</p>
+      </div>
+        </div>
+        <p class="eyebrow" style="margin-top:2.6rem">Guides</p>
+        <h2>Read before you install</h2>
+        <div class="guides">
+        <a href="/free-spam-call-blocker-iphone.html"><strong>Free spam call blocker</strong><span>Exactly what the free tier blocks, what it does not, and where the paid line sits.</span></a>
+        <a href="/block-spam-texts-iphone.html"><strong>Stop spam texts</strong><span>Apple's own filter first, then what a Message Filter extension adds on top of it.</span></a>
+        <a href="/truecaller-alternative-iphone.html"><strong>Truecaller alternative</strong><span>An honest comparison. Truecaller names unknown callers; Nixring never sees them.</span></a>
+        <a href="/robokiller-alternative-iphone.html"><strong>RoboKiller alternative</strong><span>Why no iPhone app can answer a spam call for you, and what is left that works.</span></a>
+        <a href="/block-number-ranges-iphone.html"><strong>Block a number range</strong><span>Premium-rate prefixes, how a range rule expands, and what it costs you in accuracy.</span></a>
+        <a href="/stop-one-ring-scam-calls-iphone.html"><strong>Stop one ring scams</strong><span>Wangiri callback fraud, the prefixes involved, and how to shut the whole range.</span></a>
+        <a href="/call-blocker-no-contacts-upload.html"><strong>No contacts upload</strong><span>The iOS permission model behind a blocker that never reads your address book.</span></a>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <h2>Nixring</h2>
+          <p style="color:var(--ink-3);font-size:.94rem;max-width:22rem">A spam call and junk text blocker for iPhone that keeps its list on the phone. Free to download, iOS 17.0 or later.</p>
+          <p><a data-aso-cta="footer" href="https://apps.apple.com/app/id6792562928?ct=footer&amp;mt=8">Download on the App Store</a></p>
+        </div>
+        <div>
+          <h2>Guides</h2>
+          <ul>
+          <li><a href="/free-spam-call-blocker-iphone.html">Free spam call blocker</a></li>
+          <li><a href="/block-spam-texts-iphone.html">Stop spam texts</a></li>
+          <li><a href="/truecaller-alternative-iphone.html">Truecaller alternative</a></li>
+          <li><a href="/robokiller-alternative-iphone.html">RoboKiller alternative</a></li>
+          <li><a href="/block-number-ranges-iphone.html">Block a number range</a></li>
+          <li><a href="/stop-one-ring-scam-calls-iphone.html">Stop one ring scams</a></li>
+          <li><a href="/call-blocker-no-contacts-upload.html">No contacts upload</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>App</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/support.html">Support and FAQ</a></li>
+            <li><a href="/privacy.html">Privacy policy</a></li>
+            <li><a href="/terms.html">Terms of use</a></li>
+            <li><a href="mailto:levin.schwab@gmx.de">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="legal">Copyright 2026 Levin Schwab. Nixring is not affiliated with Apple Inc. App Store is a trademark of Apple Inc. Truecaller, RoboKiller, Hiya and YouMail are trademarks of their respective owners and are named here only to compare products.</p>
+    </div>
+  </footer>
+<!-- Funnel-Messung: Seitenaufruf -> App-Store-Klick.
+     Vercel Web Analytics ist cookielos; das Ereignis nennt nur den Platz des Knopfes. -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href*="apps.apple.com"]');
+    if(!a)return;
+    va('event',{name:'appstore_click',data:{
+      placement:a.getAttribute('data-aso-cta')||'unmarked',
+      page:location.pathname
+    }});
+  },{capture:true,passive:true});
+})();
+</script>
 </body>
 </html>

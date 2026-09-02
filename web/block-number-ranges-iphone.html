@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Block a Whole Number Range on iPhone by Prefix | Nixring</title>
+<meta name="description" content="iOS blocks one number at a time and its call blocking API has no wildcards. A prefix rule writes out 10 to 100,000 numbers for you. How it works and where it goes wrong.">
+<meta property="og:title" content="Block a Whole Number Range on iPhone by Prefix | Nixring">
+<meta property="og:description" content="iOS blocks one number at a time and its call blocking API has no wildcards. A prefix rule writes out 10 to 100,000 numbers for you. How it works and where it goes wrong.">
+<link rel="stylesheet" href="/aso-tokens.css">
+<link rel="stylesheet" href="/aso-site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I block a whole number range on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not with the Phone app, which blocks one number at a time. Apple's Call Directory API has no wildcards either: it accepts explicit numbers only. A range rule works around that by writing out every number in the range for you and handing the whole set to iOS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many numbers does one rule cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Between 10 and 100,000. A rule is a prefix plus a count of trailing digits between 1 and 5, so it covers ten to the power of that count. A prefix of +49 900 with 4 trailing digits covers the 10,000 numbers from +49 900 0000 to +49 900 9999."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if a rule catches a number I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Put that number on the whitelist. A whitelist entry is applied before anything else and removes the number from the published list, so it beats every rule and every blocklist. Both the whitelist and range rules are part of Nixring Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a limit on how many numbers I can block?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app stops at 300,000 generated entries in total, so that rebuilding the list stays fast and stays inside what iOS will accept. Three rules of 100,000 numbers each will reach that ceiling."
+      }
+    }
+  ]
+}
+</script>
+<!-- aso:head:start -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#48D8F8">
+<meta name="apple-itunes-app" content="app-id=6792562928, app-argument=https://nixring.vercel.app/">
+<link rel="canonical" href="https://nixring.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nixring">
+<meta property="og:url" content="https://nixring.vercel.app/">
+<meta property="og:image" content="https://nixring.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nixring: Spam Call Blocker on the App Store">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nixring.vercel.app/og-image.png">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nixring: Spam Call Blocker",
+  "operatingSystem": "iOS 17.0 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "url": "https://nixring.vercel.app",
+  "installUrl": "https://apps.apple.com/app/id6792562928?ct=schema&mt=8",
+  "downloadUrl": "https://apps.apple.com/app/id6792562928?ct=schema&mt=8",
+  "image": "https://nixring.vercel.app/og-image.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Levin David Schwab"
+  },
+  "softwareVersion": "1.1.0",
+  "fileSize": "5MB",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5.0,
+    "ratingCount": 2,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/d9/7f/14d97fe8-77d5-0056-aa68-cd56e81d363d/01.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/7a/a0/c87aa02b-8821-3c80-cf94-3a4d2f396705/02.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/95/f5/3a95f5f5-7d89-bab3-af1a-039f03817977/03.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/45/52/8c4552d7-f0d1-6b21-48d8-0571dac1c214/04.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/a2/bb/6da2bb7b-7daf-4cdf-d52f-03b2bf3095c8/05.png/320x480bb.jpg"
+  ]
+}
+</script>
+<!-- aso:head:end -->
+
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="mark" href="/"><img src="/favicon-48.png" alt="Nixring app icon" width="28" height="28">Nixring</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="/free-spam-call-blocker-iphone.html">Free tier</a>
+        <a href="/block-spam-texts-iphone.html">Spam texts</a>
+        <a href="/truecaller-alternative-iphone.html">Comparisons</a>
+        <a href="/support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Block a whole number range on iPhone by prefix</h1>
+        <p class="lede">Premium-rate lines, shared-cost lines and a spammer working through a block all share a prefix. Blocking them one number at a time is hopeless. Here is how a range rule does it in one entry.</p>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="hero-ranges" href="https://apps.apple.com/app/id6792562928?ct=hero-ranges&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Range rules are part of Nixring Pro. Free to download to try the rest.</p>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">The constraint</p>
+        <h2>iOS has no wildcards, so the rule writes them out</h2>
+        <p>Apple's Call Directory takes a sorted list of explicit numbers. There is no pattern syntax, no asterisk, nothing that means everything starting with these digits. A range rule closes that gap by enumerating the range for you.</p>
+        <p>You give it two things: a prefix in digits, and how many trailing digits to fill in, between 1 and 5. The rule then covers every number from the prefix followed by all zeros to the prefix followed by all nines.</p>
+        <div class="tablewrap">
+          <table>
+            <caption>How the trailing digit count translates into coverage. The rule below uses the German premium-rate prefix 49 900 as its example.</caption>
+            <thead><tr><th scope="col">Trailing digits</th><th scope="col">Numbers covered</th><th scope="col">First and last in the range</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>10</td><td><span class="mono">+49 900 0</span> to <span class="mono">+49 900 9</span></td></tr>
+              <tr><th scope="row">2</th><td>100</td><td><span class="mono">+49 900 00</span> to <span class="mono">+49 900 99</span></td></tr>
+              <tr><th scope="row">3</th><td>1,000</td><td><span class="mono">+49 900 000</span> to <span class="mono">+49 900 999</span></td></tr>
+              <tr><th scope="row">4</th><td>10,000</td><td><span class="mono">+49 900 0000</span> to <span class="mono">+49 900 9999</span></td></tr>
+              <tr><th scope="row">5</th><td>100,000</td><td><span class="mono">+49 900 00000</span> to <span class="mono">+49 900 99999</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Four trailing digits is the default because it is usually the right size: wide enough to cover a service block, narrow enough that you can still reason about what you just blocked.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Ranges worth a rule</p>
+        <h2>Prefixes that stay put</h2>
+        <p>A rule is only worth writing when the prefix is stable. Regulator-allocated service ranges qualify, because the allocation does not change when an individual operator does.</p>
+        <ul class="ledger">
+          <li><span class="num">+49 900</span><span class="what">German premium rate. Charged per minute or per call, sometimes at several euros a minute.</span></li>
+          <li><span class="num">+49 137</span><span class="what">German televoting and mass call numbers. The range behind competition and phone-in lines.</span></li>
+          <li><span class="num">+49 180</span><span class="what">German shared cost service numbers. Often legitimate, so think before you shut the whole block.</span></li>
+        </ul>
+        <p>Twenty numbers from the first of those ranges, fifteen from the second and fifteen from the third are already in the built-in list, so you get a sample of each without writing anything. A rule turns that sample into the whole range.</p>
+        <div class="note limit">
+          <p><strong>Wide rules catch real callers.</strong> Plenty of ordinary services sit on shared-cost numbers, including support lines you might actually want to reach you. Before writing a rule over a whole block, put the numbers you rely on into the whitelist. Whitelist entries are removed from the published list before iOS ever sees it, so they beat every rule.</p>
+        </div>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="body-ranges" href="https://apps.apple.com/app/id6792562928?ct=body-ranges&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Rules and the whitelist are both part of Nixring Pro.</p>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Ceiling</p>
+        <h2>300,000 entries, then it stops</h2>
+        <p>The app will not publish more than 300,000 generated numbers in total. Rule expansion stops there rather than growing without limit, which keeps the list rebuild quick and keeps it within what iOS accepts. Three rules at five trailing digits each will reach that ceiling on their own, so wide rules are worth spending carefully.</p>
+        <p>Order matters as well. The built-in list and your own numbers are published first, then rules fill the remaining room. Your explicit numbers are never dropped in favour of a rule.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+        <div class="faq">
+        <div>
+          <h3>Can I block a whole number range on iPhone?</h3>
+          <p>Not with the Phone app, which blocks one number at a time. Apple's Call Directory API has no wildcards either: it accepts explicit numbers only. A range rule works around that by writing out every number in the range for you and handing the whole set to iOS.</p>
+        </div>
+        <div>
+          <h3>How many numbers does one rule cover?</h3>
+          <p>Between 10 and 100,000. A rule is a prefix plus a count of trailing digits between 1 and 5, so it covers ten to the power of that count. A prefix of +49 900 with 4 trailing digits covers the 10,000 numbers from +49 900 0000 to +49 900 9999.</p>
+        </div>
+        <div>
+          <h3>What happens if a rule catches a number I need?</h3>
+          <p>Put that number on the whitelist. A whitelist entry is applied before anything else and removes the number from the published list, so it beats every rule and every blocklist. Both the whitelist and range rules are part of Nixring Pro.</p>
+        </div>
+        <div>
+          <h3>Is there a limit on how many numbers I can block?</h3>
+          <p>Yes. The app stops at 300,000 generated entries in total, so that rebuilding the list stays fast and stays inside what iOS will accept. Three rules of 100,000 numbers each will reach that ceiling.</p>
+        </div>
+      </div>
+        <p><a href="/">Back to the Nixring home page</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Related</p>
+        <h2>Keep reading</h2>
+        <div class="guides">
+        <a href="/stop-one-ring-scam-calls-iphone.html"><strong>Stop one ring scams</strong><span>Wangiri callback fraud, the prefixes involved, and how to shut the whole range.</span></a>
+        <a href="/free-spam-call-blocker-iphone.html"><strong>Free spam call blocker</strong><span>Exactly what the free tier blocks, what it does not, and where the paid line sits.</span></a>
+        <a href="/robokiller-alternative-iphone.html"><strong>RoboKiller alternative</strong><span>Why no iPhone app can answer a spam call for you, and what is left that works.</span></a>
+        <a href="/call-blocker-no-contacts-upload.html"><strong>No contacts upload</strong><span>The iOS permission model behind a blocker that never reads your address book.</span></a>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <h2>Nixring</h2>
+          <p style="color:var(--ink-3);font-size:.94rem;max-width:22rem">A spam call and junk text blocker for iPhone that keeps its list on the phone. Free to download, iOS 17.0 or later.</p>
+          <p><a data-aso-cta="footer" href="https://apps.apple.com/app/id6792562928?ct=footer&amp;mt=8">Download on the App Store</a></p>
+        </div>
+        <div>
+          <h2>Guides</h2>
+          <ul>
+          <li><a href="/free-spam-call-blocker-iphone.html">Free spam call blocker</a></li>
+          <li><a href="/block-spam-texts-iphone.html">Stop spam texts</a></li>
+          <li><a href="/truecaller-alternative-iphone.html">Truecaller alternative</a></li>
+          <li><a href="/robokiller-alternative-iphone.html">RoboKiller alternative</a></li>
+          <li><a href="/block-number-ranges-iphone.html">Block a number range</a></li>
+          <li><a href="/stop-one-ring-scam-calls-iphone.html">Stop one ring scams</a></li>
+          <li><a href="/call-blocker-no-contacts-upload.html">No contacts upload</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>App</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/support.html">Support and FAQ</a></li>
+            <li><a href="/privacy.html">Privacy policy</a></li>
+            <li><a href="/terms.html">Terms of use</a></li>
+            <li><a href="mailto:levin.schwab@gmx.de">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="legal">Copyright 2026 Levin Schwab. Nixring is not affiliated with Apple Inc. App Store is a trademark of Apple Inc. Truecaller, RoboKiller, Hiya and YouMail are trademarks of their respective owners and are named here only to compare products.</p>
+    </div>
+  </footer>
+<!-- Funnel-Messung: Seitenaufruf -> App-Store-Klick.
+     Vercel Web Analytics ist cookielos; das Ereignis nennt nur den Platz des Knopfes. -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href*="apps.apple.com"]');
+    if(!a)return;
+    va('event',{name:'appstore_click',data:{
+      placement:a.getAttribute('data-aso-cta')||'unmarked',
+      page:location.pathname
+    }});
+  },{capture:true,passive:true});
+})();
+</script>
+</body>
+</html>

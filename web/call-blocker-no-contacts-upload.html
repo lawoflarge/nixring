@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call Blocker for iPhone That Never Asks for Contacts | Nixring</title>
+<meta name="description" content="How iOS call blocking really works: the app publishes a list, iOS does the blocking, and the extension is never told a call happened. What Nixring asks for and what it gives up.">
+<meta property="og:title" content="Call Blocker for iPhone That Never Asks for Contacts | Nixring">
+<meta property="og:description" content="How iOS call blocking really works: the app publishes a list, iOS does the blocking, and the extension is never told a call happened. What Nixring asks for and what it gives up.">
+<link rel="stylesheet" href="/aso-tokens.css">
+<link rel="stylesheet" href="/aso-site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do call blocker apps want my contacts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two reasons. To tell a known caller from an unknown one before deciding what to do, and to grow a directory that maps numbers to names. The second is what makes a large caller ID database possible, and it is the reason the question comes up so often."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Nixring ask for contacts access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The app declares no contacts usage description and contains no code that reads the address book, so iOS never shows the permission prompt. The only usage description the app declares is the tracking prompt required for advertising in the free version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the Call Directory extension see?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A list of numbers from a file on your phone, and nothing else. iOS starts it, asks for the list, receives it, and shuts it down. It is not started when a call arrives, is not told who called, and is not told what was rejected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does anything leave the phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Nixring Pro, one request for a public JSON file that everyone downloads identically, which carries nothing about you. In the free version the Google advertising SDK also communicates, and the App Store privacy label reflects that with identifiers and usage data used for tracking. Neither path can carry your contacts, your calls or your messages, because the app never has them."
+      }
+    }
+  ]
+}
+</script>
+<!-- aso:head:start -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#48D8F8">
+<meta name="apple-itunes-app" content="app-id=6792562928, app-argument=https://nixring.vercel.app/">
+<link rel="canonical" href="https://nixring.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nixring">
+<meta property="og:url" content="https://nixring.vercel.app/">
+<meta property="og:image" content="https://nixring.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nixring: Spam Call Blocker on the App Store">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nixring.vercel.app/og-image.png">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nixring: Spam Call Blocker",
+  "operatingSystem": "iOS 17.0 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "url": "https://nixring.vercel.app",
+  "installUrl": "https://apps.apple.com/app/id6792562928?ct=schema&mt=8",
+  "downloadUrl": "https://apps.apple.com/app/id6792562928?ct=schema&mt=8",
+  "image": "https://nixring.vercel.app/og-image.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Levin David Schwab"
+  },
+  "softwareVersion": "1.1.0",
+  "fileSize": "5MB",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5.0,
+    "ratingCount": 2,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/d9/7f/14d97fe8-77d5-0056-aa68-cd56e81d363d/01.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/7a/a0/c87aa02b-8821-3c80-cf94-3a4d2f396705/02.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/95/f5/3a95f5f5-7d89-bab3-af1a-039f03817977/03.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/45/52/8c4552d7-f0d1-6b21-48d8-0571dac1c214/04.png/320x480bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/a2/bb/6da2bb7b-7daf-4cdf-d52f-03b2bf3095c8/05.png/320x480bb.jpg"
+  ]
+}
+</script>
+<!-- aso:head:end -->
+
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="mark" href="/"><img src="/favicon-48.png" alt="Nixring app icon" width="28" height="28">Nixring</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="/free-spam-call-blocker-iphone.html">Free tier</a>
+        <a href="/block-spam-texts-iphone.html">Spam texts</a>
+        <a href="/truecaller-alternative-iphone.html">Comparisons</a>
+        <a href="/support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>A call blocker that never asks for your contacts</h1>
+        <p class="lede">Every spam blocker on iPhone runs inside the same permission model. The difference between them is which parts they ask for. This page walks through what Nixring asks for, which is close to nothing, and what that costs.</p>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="hero-privacy" href="https://apps.apple.com/app/id6792562928?ct=hero-privacy&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Free download. No account, no sign up, no permission prompt for contacts.</p>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">The mechanism</p>
+        <h2>A list is published, not a call inspected</h2>
+        <p>It is easy to assume a blocker watches your calls. On iPhone it cannot. Apple hands third-party apps a publishing interface, not a monitoring one.</p>
+        <ol class="steps">
+          <li><h3>iOS starts the extension</h3><p>When you switch the app on in Settings, or when it asks for a reload, iOS launches the Call Directory extension in its own sandbox.</p></li>
+          <li><h3>It reads a file and hands over numbers</h3><p>The extension opens a JSON file in the app's shared container, builds the two sorted lists iOS requires, one for blocking and one for labelling, and passes them across. It makes no network request.</p></li>
+          <li><h3>iOS takes over and the extension ends</h3><p>From then on iOS matches incoming calls itself. The extension is not woken for a call, receives no callback, and is told nothing about what happened.</p></li>
+        </ol>
+        <p>That is why there is no call history in the app, and why the shield screen counts numbers rather than blocked calls. There is nothing to count, because nothing is ever reported back.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Permissions</p>
+        <h2>What the app asks for, and what it does not</h2>
+        <ul class="checks minus">
+          <li><strong>Contacts.</strong> Never requested. The app declares no contacts usage description and contains no address book code, so the prompt never appears.</li>
+          <li><strong>Microphone, calls, call history.</strong> Never requested. No iOS API offers them to a blocker in the first place.</li>
+          <li><strong>Location.</strong> Never requested.</li>
+          <li><strong>Notifications.</strong> Not needed. The blocking is done by iOS and stays silent.</li>
+        </ul>
+        <p>One prompt does appear in the free version: the tracking prompt that Apple requires before an advertising SDK may use the advertising identifier. That is the honest cost of a free tier funded by ads, and it is visible on the App Store privacy label as identifiers and usage data used to track you. Nixring Pro removes the advertising.</p>
+        <div class="note">
+          <p><strong>Neither version has an account.</strong> There is no sign up, no email, no password and no server holding a profile. Nixring Pro is unlocked through your App Store purchase, which the app checks with Apple rather than with a service of its own.</p>
+        </div>
+        <div class="cta">
+        <a class="aso-badge" data-aso-cta="body-privacy" href="https://apps.apple.com/app/id6792562928?ct=body-privacy&amp;mt=8"><img src="/app-store-badge-white.svg" alt="Download Nixring on the App Store" width="164" height="55" loading="lazy"></a>
+        <p class="cta-note">Nothing to sign up for. Switch it on in Settings and it works.</p>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">The trade</p>
+        <h2>What this design gives up</h2>
+        <p>Refusing the data means refusing the product it makes possible. Nixring cannot name an unknown caller, cannot warn you about a number nobody has told it about, and cannot learn from what you block. Those features are not missing because of a small team. They are missing because they require exactly the pipeline this design leaves out.</p>
+        <p>The <a href="/truecaller-alternative-iphone.html">comparison with Truecaller</a> sets out where that trade goes against Nixring, and <a href="/free-spam-call-blocker-iphone.html">the free tier page</a> shows how small the starting list really is.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+        <div class="faq">
+        <div>
+          <h3>Why do call blocker apps want my contacts?</h3>
+          <p>Two reasons. To tell a known caller from an unknown one before deciding what to do, and to grow a directory that maps numbers to names. The second is what makes a large caller ID database possible, and it is the reason the question comes up so often.</p>
+        </div>
+        <div>
+          <h3>Does Nixring ask for contacts access?</h3>
+          <p>No. The app declares no contacts usage description and contains no code that reads the address book, so iOS never shows the permission prompt. The only usage description the app declares is the tracking prompt required for advertising in the free version.</p>
+        </div>
+        <div>
+          <h3>What does the Call Directory extension see?</h3>
+          <p>A list of numbers from a file on your phone, and nothing else. iOS starts it, asks for the list, receives it, and shuts it down. It is not started when a call arrives, is not told who called, and is not told what was rejected.</p>
+        </div>
+        <div>
+          <h3>Does anything leave the phone?</h3>
+          <p>In Nixring Pro, one request for a public JSON file that everyone downloads identically, which carries nothing about you. In the free version the Google advertising SDK also communicates, and the App Store privacy label reflects that with identifiers and usage data used for tracking. Neither path can carry your contacts, your calls or your messages, because the app never has them.</p>
+        </div>
+      </div>
+        <p><a href="/">Back to the Nixring home page</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="eyebrow">Related</p>
+        <h2>Keep reading</h2>
+        <div class="guides">
+        <a href="/truecaller-alternative-iphone.html"><strong>Truecaller alternative</strong><span>An honest comparison. Truecaller names unknown callers; Nixring never sees them.</span></a>
+        <a href="/robokiller-alternative-iphone.html"><strong>RoboKiller alternative</strong><span>Why no iPhone app can answer a spam call for you, and what is left that works.</span></a>
+        <a href="/block-spam-texts-iphone.html"><strong>Stop spam texts</strong><span>Apple's own filter first, then what a Message Filter extension adds on top of it.</span></a>
+        <a href="/free-spam-call-blocker-iphone.html"><strong>Free spam call blocker</strong><span>Exactly what the free tier blocks, what it does not, and where the paid line sits.</span></a>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <h2>Nixring</h2>
+          <p style="color:var(--ink-3);font-size:.94rem;max-width:22rem">A spam call and junk text blocker for iPhone that keeps its list on the phone. Free to download, iOS 17.0 or later.</p>
+          <p><a data-aso-cta="footer" href="https://apps.apple.com/app/id6792562928?ct=footer&amp;mt=8">Download on the App Store</a></p>
+        </div>
+        <div>
+          <h2>Guides</h2>
+          <ul>
+          <li><a href="/free-spam-call-blocker-iphone.html">Free spam call blocker</a></li>
+          <li><a href="/block-spam-texts-iphone.html">Stop spam texts</a></li>
+          <li><a href="/truecaller-alternative-iphone.html">Truecaller alternative</a></li>
+          <li><a href="/robokiller-alternative-iphone.html">RoboKiller alternative</a></li>
+          <li><a href="/block-number-ranges-iphone.html">Block a number range</a></li>
+          <li><a href="/stop-one-ring-scam-calls-iphone.html">Stop one ring scams</a></li>
+          <li><a href="/call-blocker-no-contacts-upload.html">No contacts upload</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>App</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/support.html">Support and FAQ</a></li>
+            <li><a href="/privacy.html">Privacy policy</a></li>
+            <li><a href="/terms.html">Terms of use</a></li>
+            <li><a href="mailto:levin.schwab@gmx.de">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="legal">Copyright 2026 Levin Schwab. Nixring is not affiliated with Apple Inc. App Store is a trademark of Apple Inc. Truecaller, RoboKiller, Hiya and YouMail are trademarks of their respective owners and are named here only to compare products.</p>
+    </div>
+  </footer>
+<!-- Funnel-Messung: Seitenaufruf -> App-Store-Klick.
+     Vercel Web Analytics ist cookielos; das Ereignis nennt nur den Platz des Knopfes. -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
+(function(){
+  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href*="apps.apple.com"]');
+    if(!a)return;
+    va('event',{name:'appstore_click',data:{
+      placement:a.getAttribute('data-aso-cta')||'unmarked',
+      page:location.pathname
+    }});
+  },{capture:true,passive:true});
+})();
+</script>
+</body>
+</html>
