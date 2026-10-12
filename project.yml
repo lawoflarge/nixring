@@ -8,8 +8,9 @@ options:
 
 settings:
   base:
-    MARKETING_VERSION: "1.1.0"
-    CURRENT_PROJECT_VERSION: "6"
+    CROSS_PROMOTION_BASE_URL: "https://zovzimsewjkjmazckhua.supabase.co/functions/v1/cross-promotion"
+    MARKETING_VERSION: "1.1.1"
+    CURRENT_PROJECT_VERSION: "7"
     DEVELOPMENT_TEAM: R95M36AU2X
     SWIFT_VERSION: "5.0"
     TARGETED_DEVICE_FAMILY: "1"
@@ -23,6 +24,9 @@ settings:
 # Both belong to the app target only. Nothing advertising goes into the Call
 # Directory or the Message Filter extension.
 packages:
+  CrossPromotion:
+    url: https://github.com/lawoflarge/lawoflarge.app.git
+    revision: 168dd73615cde4a62f92b0064aee3048c628c5a4
   NixringCore:
     path: Packages/NixringCore
   GoogleMobileAds:
@@ -53,6 +57,10 @@ targets:
         CODE_SIGN_IDENTITY: "Apple Distribution"
         PROVISIONING_PROFILE_SPECIFIER: "Nixring App Store"
     dependencies:
+      - package: CrossPromotion
+        product: CrossPromotionCore
+      - package: CrossPromotion
+        product: CrossPromotionUI
       - package: NixringCore
       - target: NixringCallDirectory
       - target: NixringMessageFilter

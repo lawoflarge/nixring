@@ -32,7 +32,7 @@ struct MainTabView: View {
             BlocklistView()
                 .tag(1)
                 .tabItem { Label("Blocklist", systemImage: "nosign") }
-            SettingsView()
+            SettingsView(isActive: tab == 2)
                 .tag(2)
                 .tabItem { Label("Settings", systemImage: "gearshape.fill") }
         }

@@ -88,7 +88,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Label("100% on-device", systemImage: "lock.shield.fill")
                     .font(.headline).foregroundStyle(Palette.accent)
-                Text("Your contacts and blocklist never leave your iPhone. Nixring has no account and no server that receives your data: the Pro blocklist update only downloads a public file. The free version loads advertising from Google, Pro loads none.")
+                Text("Your contacts and blocklist stay on your iPhone. Nixring has no account. Pro blocklist updates download a public file. The free version loads Google ads; Pro removes these ads. App recommendations use daily aggregate counts of qualified views and App Store opens without user or device identifiers.")
                     .font(.subheadline).foregroundStyle(Palette.textSecondary)
             }
         }

@@ -1,12 +1,16 @@
 import SwiftUI
+import CrossPromotionUI
 import NixringCore
 
 struct SettingsView: View {
+    var isActive = true
+    @State private var promotions = AppPromotions.makeStore()
     @Environment(AppModel.self) private var model
     @Environment(AdsController.self) private var ads
 
     var body: some View {
         NavigationStack {
+            PromotionViewport { viewport in
             List {
                 if model.isPro { proActiveSection } else { upgradeSection }
 
@@ -38,6 +42,10 @@ struct SettingsView: View {
                     Text("When on, any text from an unknown sender that contains a link is filtered as junk.")
                 }
                 .listRowBackground(Palette.surface)
+
+                if let promotions {
+                    AppPromotionSection(store: promotions, viewport: isActive && !model.showPaywall ? viewport : .zero)
+                }
 
                 Section("Privacy & legal") {
                     Link(destination: AppLinks.privacy) { linkRow("Privacy Policy", "hand.raised.fill") }
@@ -80,6 +88,8 @@ struct SettingsView: View {
             .background(Palette.bg.ignoresSafeArea())
             // Switches and links, nothing that could be interrupted. As an
             // inset, so the last row stays reachable.
+            }
+            .promotionLifecycle(promotions, isActive: isActive && !model.showPaywall)
             .safeAreaInset(edge: .bottom) { AdBannerView(ads: ads) }
             .tint(Palette.accent)
             .navigationTitle("Settings")
